@@ -1,0 +1,12 @@
+Package: shinysky
+Type: Package
+Title: A set of Shiny UI components/widgets.
+Version: 0.1.0
+Date: 2013-11-23
+Author: AnalytixWare
+Maintainer: ZJ <dzj@analytixware.com>
+Description: A set of Shiny UI components includings alerts and styled buttons
+License: MIT
+Collate:
+    'action-button.R'
+    'alert.R'
