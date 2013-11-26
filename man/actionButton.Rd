@@ -2,7 +2,7 @@
 \alias{actionButton}
 \title{Action button}
 \usage{
-  actionButton(inputId, label, btn.style = "",
+  actionButton(inputId, label, styleclass = "",
     css.class = "")
 }
 \arguments{
@@ -13,9 +13,9 @@
   label, but you could also use any other HTML, like an
   image.}
 
-  \item{btn.style}{The styling class of the button--options
-  are primary, info, success ,warning, ,danger ,inverse
-  ,link}
+  \item{styleclass}{The styling class of the
+  button--options are primary, info, success, warning,
+  danger, inverse, link or blank}
 
   \item{css.class}{Any additional CSS class one wishes to
   add to the action button e.g btn-large}
