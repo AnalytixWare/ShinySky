@@ -10,3 +10,4 @@ License: MIT
 Collate:
     'action-button.R'
     'alert.R'
+    'pop-over.R'

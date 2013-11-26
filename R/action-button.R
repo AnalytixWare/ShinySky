@@ -7,17 +7,17 @@
 #'   value.
 #' @param label The contents of the button--usually a text label, but you could 
 #'   also use any other HTML, like an image.
-#' @param btn.style The styling class of the button--options are primary, info, 
-#'   success ,warning, ,danger ,inverse ,link
+#' @param styleclass The styling class of the button--options are primary, info, 
+#'   success, warning, danger, inverse, link or blank
 #' @param css.class Any additional CSS class one wishes to add to the action 
 #'   button e.g btn-large
 #'   
 #' @family input elements
 #'   
 #' @export
-actionButton <- function(inputId, label, btn.style = "" , css.class = "") {
-  if ( btn.style %in% c("primary","info","success","warning","danger","inverse","link")) {
-    btn.css.class <- paste("btn",btn.style,sep="-")
+actionButton <- function(inputId, label, styleclass = "" , css.class = "") {
+  if ( styleclass %in% c("primary","info","success","warning","danger","inverse","link")) {
+    btn.css.class <- paste("btn",styleclass,sep="-")
   } else btn.css.class = ""
   
   tags$button(id=inputId, type="button", class=paste("btn action-button",btn.css.class,css.class,collapse=" "), label)

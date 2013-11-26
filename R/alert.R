@@ -12,6 +12,6 @@
 #'   
 #' @export
 showShinyAlert <- function(id,HTMLtext,session,styleclass="success") {
-  alert.css.style = paste("alert",alert.style,sep="-")
+  alert.css.style = paste("alert",styleclass,sep="-")
   session$sendCustomMessage("shinyalerthandler",list(id=id,HTMLtext = HTMLtext,alert.css.style = alert.css.style))
 }
