@@ -9,5 +9,6 @@ Description: A set of Shiny UI components includings alerts and styled buttons
 License: MIT
 Collate:
     'action-button.R'
-    'alert.R'
     'pop-over.R'
+    'setup.R'
+    'shiny-alert.R'

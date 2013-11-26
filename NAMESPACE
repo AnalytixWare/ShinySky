@@ -1,2 +1,2 @@
-export(actionButton)
-export(showShinyAlert)
+depends(shiny)
+export(actionButton,shinyalert,showShinyAlert)

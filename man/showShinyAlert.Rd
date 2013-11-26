@@ -16,10 +16,9 @@
   ,link}
 }
 \description{
-  Creates an action button whose value is initially zero,
-  and increments by one each time it is pressed.
+  Show an alert
 }
 \seealso{
-  Other res: \code{\link{actionButton}}
+  Other shinysky elements: \code{\link{shinyalert}}
 }
 
