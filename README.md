@@ -26,12 +26,12 @@ Here you can specify the style you want using the style parameter. The possible 
 ##Alerts
 
 ### ui.R
-_shinyalet(id)_
+_shinyalert(id)_
 
 Simply provide an id. The alert will be hidden until you show it using _showshinyalert_ in server.R
 
 ### server.R
-_showshinyalet(id,HTMLtext,session,styleclass)_
+_showshinyalert(id,HTMLtext,session,styleclass)_
 
 Put some valid HTML in HTMLtext. Here you can specify the style you want using the styleclass parameter. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
 
