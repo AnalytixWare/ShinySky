@@ -11,5 +11,5 @@ License: MIT
 Collate:
     'action-button.R'
     'pop-over.R'
-    'setup.R'
+    'zzz.R'
     'shiny-alert.R'
