@@ -32,5 +32,3 @@ Put some valid HTML in HTMLtext. Here you can specify the style you want using t
 # Example
 
 shinysky::run.shinysky.example()
-
-
