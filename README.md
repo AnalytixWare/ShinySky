@@ -4,9 +4,11 @@ ShinySky
 Various UI widgets/components used by AnalytixWare's flaghship product e.g. alerts, styled buttons
 
 # Install
-install.packages("devtools")
-
+install.packages("devtools")#if not alrady installed
 devtools::install_github("ShinySky","AnalytixWare")
+require(shinysky)
+shinysky::run.shinysky.example()
+
 
 # Usage
 
