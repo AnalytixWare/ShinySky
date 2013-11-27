@@ -16,9 +16,13 @@
   ,link}
 }
 \description{
-  Show an alert
+  Used in server.R. Show an alert placed in ui.R with
+  shinyalert
 }
 \seealso{
-  Other shinysky elements: \code{\link{shinyalert}}
+  shinyalert
+
+  Other ShinySky.elements: \code{\link{actionButton}},
+  \code{\link{shinyalert}}
 }
 

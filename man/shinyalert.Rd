@@ -12,6 +12,9 @@
   Creates an shinyalert
 }
 \seealso{
-  Other shinysky elements: \code{\link{showShinyAlert}}
+  shinyalert
+
+  Other ShinySky.elements: \code{\link{actionButton}},
+  \code{\link{showShinyAlert}}
 }
 

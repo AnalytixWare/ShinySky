@@ -1,3 +1,3 @@
 .onLoad <- function(libname, pkgname) {
-  addResourcePath("shinysky",system.file("www",package="shinysky"))
+  shiny::addResourcePath("shinysky",system.file("www",package="shinysky"))
 }

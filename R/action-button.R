@@ -7,12 +7,13 @@
 #'   value.
 #' @param label The contents of the button--usually a text label, but you could 
 #'   also use any other HTML, like an image.
-#' @param styleclass The styling class of the button--options are primary, info, 
-#'   success, warning, danger, inverse, link or blank
+#' @param styleclass The Bootstrap styling class of the button--options are
+#'   primary, info, success, warning, danger, inverse, link or blank
 #' @param css.class Any additional CSS class one wishes to add to the action 
-#'   button e.g btn-large
+#'   button e.g btn-large, btn-block
 #'   
-#' @family input elements
+#' @family ShinySky elements
+#'
 #'   
 #' @export
 actionButton <- function(inputId, label, styleclass = "" , css.class = "") {
