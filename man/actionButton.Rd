@@ -26,6 +26,6 @@
 }
 \seealso{
   Other ShinySky.elements: \code{\link{shinyalert}},
-  \code{\link{showShinyAlert}}
+  \code{\link{showshinyalert}}
 }
 

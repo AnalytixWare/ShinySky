@@ -11,11 +11,11 @@
 #' @export
 shinyalert <- function(id) {
 	tagList(
-		singleton(tags$head(tags$script()))
-		,HTML('<div id="importDataAlert" class="shinyalert alert alert-success hide fade"  data-alert="alert"></div>'))
+		singleton(tags$head(tags$script(src="shinysky/shinyalert.js")))
+		,HTML(paste0('<div id="',id,'" class="shinyalert alert hide fade"  data-alert="alert"></div>')))
 }
 
-#' showShinyAlert
+#' showshinyalert
 #' 
 #' Used in server.R. Show an alert placed in ui.R with shinyalert
 #' 
@@ -27,9 +27,10 @@ shinyalert <- function(id) {
 #' @family ShinySky elements
 #'   
 #' @seealso shinyalert
+#' 
 #'   
 #' @export
-showShinyAlert <- function(id,HTMLtext,session,styleclass="success") {
+showshinyalert <- function(id,HTMLtext,session,styleclass="success") {
   alert.css.style = paste("alert",styleclass,sep="-")
   session$sendCustomMessage("shinyalerthandler",list(id=id,HTMLtext = HTMLtext,alert.css.style = alert.css.style))
 }

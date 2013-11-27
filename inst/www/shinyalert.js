@@ -1,3 +1,5 @@
+console.log("shinyalert.js loaded");
+
  Shiny.addCustomMessageHandler("shinyalerthandler", function(data) {
      var el = $('#' + data.id);
      var classes = el.attr('class').split(' ').filter(function(x) {

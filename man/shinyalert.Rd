@@ -15,6 +15,6 @@
   shinyalert
 
   Other ShinySky.elements: \code{\link{actionButton}},
-  \code{\link{showShinyAlert}}
+  \code{\link{showshinyalert}}
 }
 

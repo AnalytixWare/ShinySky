@@ -1,3 +1,4 @@
 export(actionButton)
+export(run.shinysky.example)
 export(shinyalert)
-export(showShinyAlert)
+export(showshinyalert)

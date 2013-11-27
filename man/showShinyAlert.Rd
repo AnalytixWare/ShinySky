@@ -1,8 +1,8 @@
-\name{showShinyAlert}
-\alias{showShinyAlert}
-\title{showShinyAlert}
+\name{showshinyalert}
+\alias{showshinyalert}
+\title{showshinyalert}
 \usage{
-  showShinyAlert(id, HTMLtext, session,
+  showshinyalert(id, HTMLtext, session,
     styleclass = "success")
 }
 \arguments{
