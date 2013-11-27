@@ -25,7 +25,7 @@ shinyServer(function(input, output,session) {
   })
   observe({
     if(input$id_danger==0) return()
-    showshinyalert("shinyalert1",paste("You have clicked","danger"),session,styleclass="danger")
+    showshinyalert("shinyalert1",paste("You have clicked","danger","<button type='button' class='btn btn-danger'>Danger</button>"),session,styleclass="danger")
   })
   observe({
     if(input$id_inverse==0) return()
