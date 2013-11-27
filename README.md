@@ -10,6 +10,8 @@ devtools::install_github("ShinySky","AnalytixWare")
 
 # Usage
 
+require(shinysky)
+
 ##Action Buttons
 
 _actionButton(inputId, label, styleclass = yourStyle)_
