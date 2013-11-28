@@ -7,15 +7,20 @@ Various UI widgets/components used by AnalytixWare's flaghship product e.g. aler
 
 
 # Install
+
+```
 install.packages("devtools")#if not alrady installed
 devtools::install_github("ShinySky","AnalytixWare")
 require(shinysky)
 shinysky::run.shinysky.example()
+```
 
 
 # Usage
 
+```
 require(shinysky)
+```
 
 ##Action Buttons
 
@@ -38,7 +43,9 @@ Put some valid HTML in HTMLtext. Here you can specify the style you want using t
 
 # Example
 
+```
 shinysky::run.shinysky.example()
+```
 
 # Github
 
