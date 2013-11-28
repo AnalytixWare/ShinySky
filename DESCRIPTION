@@ -1,7 +1,7 @@
 Package: shinysky
 Type: Package
 Title: A set of Shiny UI components/widgets.
-Version: 0.1.0
+Version: 0.1.1
 Date: 2013-11-23
 Author: AnalytixWare
 Maintainer: ZJ <dzj@analytixware.com>

@@ -2,8 +2,8 @@
 \alias{actionButton}
 \title{Action button}
 \usage{
-  actionButton(inputId, label, styleclass = "",
-    css.class = "")
+  actionButton(inputId, label, styleclass = "", size = "",
+    block = F, icon = NULL, css.class = "")
 }
 \arguments{
   \item{inputId}{Specifies the input slot that will be used
@@ -17,8 +17,16 @@
   button--options are primary, info, success, warning,
   danger, inverse, link or blank}
 
+  \item{size}{The size of the button--options are large,
+  small, mini}
+
+  \item{block}{Whehter the button should fill the block}
+
+  \item{icon}{Display an icon for the button
+  \url{http://getbootstrap.com/2.3.2/base-css.html#icons}}
+
   \item{css.class}{Any additional CSS class one wishes to
-  add to the action button e.g btn-large, btn-block}
+  add to the action button}
 }
 \description{
   Creates an action button whose value is initially zero,

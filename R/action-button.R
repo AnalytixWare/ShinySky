@@ -7,19 +7,35 @@
 #'   value.
 #' @param label The contents of the button--usually a text label, but you could 
 #'   also use any other HTML, like an image.
-#' @param styleclass The Bootstrap styling class of the button--options are
+#' @param styleclass The Bootstrap styling class of the button--options are 
 #'   primary, info, success, warning, danger, inverse, link or blank
+#' @param size The size of the button--options are large, small, mini
+#' @param block Whehter the button should fill the block
+#' @param icon Display an icon for the button
+#'   \url{http://getbootstrap.com/2.3.2/base-css.html#icons}
 #' @param css.class Any additional CSS class one wishes to add to the action 
-#'   button e.g btn-large, btn-block
+#'   button
 #'   
 #' @family ShinySky elements
-#'
+#'   
 #'   
 #' @export
-actionButton <- function(inputId, label, styleclass = "" , css.class = "") {
+actionButton <- function(inputId, label, styleclass = "" , size = "", block = F, icon = NULL, css.class = "") {
   if ( styleclass %in% c("primary","info","success","warning","danger","inverse","link")) {
     btn.css.class <- paste("btn",styleclass,sep="-")
   } else btn.css.class = ""
   
-  tags$button(id=inputId, type="button", class=paste("btn action-button",btn.css.class,css.class,collapse=" "), label)
+  if (size %in% c("large", "small", "mini")) {
+  	btn.size.class <- paste("btn",size,sep="-")
+  } else btn.size.class = ""
+
+  if (block) {
+  	btn.block = "btn-block"
+  } else btn.block = ""
+
+  if(!is.null(icon)) {
+  	icon.code <- HTML(paste0("<i class='icon-",icon,"'></i>"))
+  } else icon.code = ""
+
+  tags$button(id=inputId, type="button", class=paste("btn action-button",btn.css.class,btn.size.class,btn.block,css.class,collapse=" "),icon.code, label)
 }

@@ -5,14 +5,18 @@ shinyUI(basicPage(
   
   # Application title
   headerPanel("ShinySky Examples"),  
-  actionButton("id_blank","blank"),
-  actionButton("id_primary","primary",styleclass="primary"),
-  actionButton("id_info","info",styleclass="info"),
-  actionButton("id_success","success",styleclass="success"),
-  actionButton("id_warning","warning",styleclass="warning"),
+  actionButton("id_blank","blank",size="large"),
+  actionButton("id_primary","primary",styleclass="primary",size="mini"),
+  actionButton("id_info","info",styleclass="info",size="small"),
+  actionButton("id_success","success",styleclass="success",icon = "ok"),
+  actionButton("id_warning","warning",styleclass="warning",icon="plus"),
   actionButton("id_danger","danger",styleclass="danger"),
   actionButton("id_inverse","inverse",styleclass="inverse"),
   actionButton("id_link","link",styleclass="link"),
   shiny::helpText("Click any button to show an alert"),
-  shinyalert("shinyalert1")
+  shinyalert("shinyalert1"),
+  br(),
+  div(class="well span4","Buttons that fill a block",
+    actionButton("id_inverse2","inverse2",styleclass="inverse",block=T),
+    actionButton("id_warning2","warning2",styleclass="warning",block=T))
 ))
