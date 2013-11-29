@@ -1,4 +1,5 @@
 library(shiny)
+library(shinysky)
 
 # Define UI for miles per gallon application
 shinyUI(basicPage(
@@ -20,4 +21,5 @@ shinyUI(basicPage(
   div(class="well span4","Buttons that fill a block",
     actionButton("id_inverse2","inverse2",styleclass="inverse",block=T),
     actionButton("id_warning2","warning2",styleclass="warning",block=T))
+  ,tags$script(src="https://gist.github.com/xiaodaigh/7707701.js")
 ))
