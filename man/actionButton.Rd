@@ -3,7 +3,7 @@
 \title{Action button}
 \usage{
   actionButton(inputId, label, styleclass = "", size = "",
-    block = F, icon = NULL, css.class = "")
+    block = F, icon = NULL, css.class = "", ...)
 }
 \arguments{
   \item{inputId}{Specifies the input slot that will be used

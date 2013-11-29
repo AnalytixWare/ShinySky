@@ -14,3 +14,4 @@ Collate:
     'zzz.R'
     'shiny-alert.R'
     'run-shiny-sky-example.R'
+    'eventsButton.R'

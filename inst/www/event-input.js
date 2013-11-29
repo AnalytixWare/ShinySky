@@ -19,7 +19,7 @@ $.extend(eventInputBinding, {
         // some code here to change the tags
         $(el).data("shinysky-last-event",x)
         $(el).data("shinysky-event-count",parseInt($(el).data("shinysky-event-count"))+1)
-        $(el).data("shinysky-tot-event-count",parseInt($(el).data("shinysky-tot-event-count"))+1)
+        //$(el).data("shinysky-tot-event-count",parseInt($(el).data("shinysky-tot-event-count"))+1)
         callback();
       });    
     })

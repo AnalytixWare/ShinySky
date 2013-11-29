@@ -13,6 +13,7 @@ shinyUI(basicPage(
   actionButton("id_danger","danger",styleclass="danger"),
   actionButton("id_inverse","inverse",styleclass="inverse"),
   actionButton("id_link","link",styleclass="link"),
+  eventsButton("id_double_click_event","Double click me!",styleclass="danger",events=c("dblclick","mouseenter")),
   shiny::helpText("Click any button to show an alert"),
   shinyalert("shinyalert1"),
   br(),

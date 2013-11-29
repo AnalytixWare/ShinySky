@@ -1,4 +1,5 @@
 export(actionButton)
+export(eventsButton)
 export(run.shinysky.example)
 export(shinyalert)
 export(showshinyalert)
