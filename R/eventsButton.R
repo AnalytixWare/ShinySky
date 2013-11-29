@@ -6,6 +6,7 @@
 #' @param inputId the id of the function.
 #' @param label The displayed text
 #' @param events A sequence of events that will invalidate the button
+#'   \url{http://getbootstrap.com/2.3.2/base-css.html#icons}
 #'   
 #' @export
 eventsButton <- function(inputId, label , events=c("dblclick"),...) {	

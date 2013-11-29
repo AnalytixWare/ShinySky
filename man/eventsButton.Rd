@@ -10,7 +10,8 @@
   \item{label}{The displayed text}
 
   \item{events}{A sequence of events that will invalidate
-  the button}
+  the button
+  \url{http://getbootstrap.com/2.3.2/base-css.html#icons}}
 }
 \description{
   A button that responds to events click, doubleclick,
