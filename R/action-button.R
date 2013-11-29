@@ -20,22 +20,22 @@
 #'   
 #'   
 #' @export
-actionButton <- function(inputId, label, styleclass = "" , size = "", block = F, icon = NULL, css.class = "") {
-  if ( styleclass %in% c("primary","info","success","warning","danger","inverse","link")) {
-    btn.css.class <- paste("btn",styleclass,sep="-")
-  } else btn.css.class = ""
-  
-  if (size %in% c("large", "small", "mini")) {
-  	btn.size.class <- paste("btn",size,sep="-")
-  } else btn.size.class = ""
-
-  if (block) {
-  	btn.block = "btn-block"
-  } else btn.block = ""
-
-  if(!is.null(icon)) {
-  	icon.code <- HTML(paste0("<i class='icon-",icon,"'></i>"))
-  } else icon.code = ""
-
-  tags$button(id=inputId, type="button", class=paste("btn action-button",btn.css.class,btn.size.class,btn.block,css.class,collapse=" "),icon.code, label)
+actionButton <- function(inputId, label, styleclass = "" , size = "", block = F, icon = NULL, css.class = "",...) {
+	if ( styleclass %in% c("primary","info","success","warning","danger","inverse","link")) {
+		btn.css.class <- paste("btn",styleclass,sep="-")
+	} else btn.css.class = ""
+	
+	if (size %in% c("large", "small", "mini")) {
+		btn.size.class <- paste("btn",size,sep="-")
+	} else btn.size.class = ""
+	
+	if (block) {
+		btn.block = "btn-block"
+	} else btn.block = ""
+	
+	if(!is.null(icon)) {
+		icon.code <- HTML(paste0("<i class='icon-",icon,"'></i>"))
+	} else icon.code = ""
+	
+	tags$button(id=inputId, type="button", class=paste("btn action-button",btn.css.class,btn.size.class,btn.block,css.class,collapse=" "),icon.code, label,...)
 }
