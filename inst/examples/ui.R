@@ -18,8 +18,10 @@ shinyUI(basicPage(
   shiny::helpText("Click any button to show an alert"),
   shinyalert("shinyalert1"),
   br(),
-  div(class="well span4","Buttons that fill a block",
-    actionButton("id_inverse2","inverse2",styleclass="inverse",block=T),
-    actionButton("id_warning2","warning2",styleclass="warning",block=T))
+  div(class="row",
+    div(class="well span4","Buttons that fill a block",
+      actionButton("id_inverse2","inverse2",styleclass="inverse",block=T),
+      actionButton("id_warning2","warning2",styleclass="warning",block=T)))
+  ,h2("Source Code")
   ,tags$script(src="https://gist.github.com/xiaodaigh/7707701.js")
 ))
