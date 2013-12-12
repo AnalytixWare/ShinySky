@@ -10,9 +10,8 @@
 #'   
 #' @export
 shinyalert <- function(id) {
-	tagList(
-		singleton(tags$head(tags$script(src="shinysky/shinyalert.js")))
-		,HTML(paste0('<div id="',id,'" class="shinyalert alert hide fade"  data-alert="alert"></div>')))
+    tagList(singleton(tags$head(tags$script(src = "shinysky/shinyalert.js"))), 
+        HTML(paste0("<div id=\"", id, "\" class=\"shinyalert alert hide fade\"  data-alert=\"alert\"></div>")))
 }
 
 #' showshinyalert
@@ -30,7 +29,8 @@ shinyalert <- function(id) {
 #' 
 #'   
 #' @export
-showshinyalert <- function(id,HTMLtext,session,styleclass="success") {
-  alert.css.style = paste("alert",styleclass,sep="-")
-  session$sendCustomMessage("shinyalerthandler",list(id=id,HTMLtext = HTMLtext,alert.css.style = alert.css.style))
-}
+showshinyalert <- function(id, HTMLtext, session, styleclass = "success") {
+    alert.css.style = paste("alert", styleclass, sep = "-")
+    session$sendCustomMessage("shinyalerthandler", list(id = id, 
+        HTMLtext = HTMLtext, alert.css.style = alert.css.style))
+} 

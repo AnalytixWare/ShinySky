@@ -45,4 +45,10 @@ shinyServer(function(input, output,session) {
       showshinyalert("shinyalert1","You came in! Single click won't change me",session,styleclass="info")
     }
   })
+  
+  # typeahead
+  observe({
+    input$thti
+    showshinyalert("shinyalert2",sprintf("Typeahead Text Input Value: '%s'",input$thti),session,"error")
+  })
 })

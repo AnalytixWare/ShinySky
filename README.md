@@ -3,7 +3,7 @@ ShinySky
 
 Various UI widgets/components used by AnalytixWare's flaghship product e.g. alerts, styled buttons
 
-![alt text](https://github.com/AnalytixWare/ShinySky/blob/master/screenshots/3.png?raw=true "Examples")
+![alt text](https://github.com/AnalytixWare/ShinySky/blob/master/screenshots/4.png?raw=true "Examples")
 
 
 # Install
@@ -31,15 +31,30 @@ Here you can specify the style you want using the style parameter. The possible 
 ##Alerts
 
 ### ui.R
-_shinyalert(id)_
+```
+shinyalert(id)
+```
 
 Simply provide an id. The alert will be hidden until you show it using _showshinyalert_ in server.R
 
 ### server.R
-_showshinyalert(id,HTMLtext,session,styleclass)_
+```
+showshinyalert(id,HTMLtext,session,styleclass)
+```
 
 Put some valid HTML in HTMLtext. Here you can specify the style you want using the styleclass parameter. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
 
+##Typeahead Text Input
+```
+textinput.typeahead(
+    id="thti"
+    ,placeholder="type 'name' or '2'"
+    ,local=data.frame(name=c("name1","name2"),info=c("info1","info2"))
+    ,valueKey = "name"
+    ,tokens=c(1,2)
+    ,template = HTML("<p class='repo-language'>{{info}}</p> <p class='repo-name'>{{name}}</p> <p class='repo-description'>You need to learn more CSS to customize this further</p>")
+  )
+```
 ##Events Buttons
 
 _eventsButton(inputId, label, events = c("dblclick"))_

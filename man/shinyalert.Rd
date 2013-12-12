@@ -15,6 +15,7 @@
   shinyalert
 
   Other ShinySky.elements: \code{\link{actionButton}},
-  \code{\link{showshinyalert}}
+  \code{\link{showshinyalert}},
+  \code{\link{textInput.typeahead}}
 }
 

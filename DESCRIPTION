@@ -15,3 +15,5 @@ Collate:
     'shiny-alert.R'
     'run-shiny-sky-example.R'
     'eventsButton.R'
+    'rQuery.R'
+    'typeahead-textinput.R'

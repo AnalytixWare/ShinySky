@@ -9,11 +9,13 @@
 #'   \url{http://getbootstrap.com/2.3.2/base-css.html#icons}
 #'   
 #' @export
-eventsButton <- function(inputId, label , events=c("dblclick"),...) {	
-  
-	b <- actionButton(inputId,label,...,css.class = "shinysky-eventinput", 
-		"data-shinysky-event-count" = 0, "data-shinysky-last-event"="",
-		"data-shinysky-monitored-events" = paste(events,collapse=" ",...)
-		)
-  return(tagList(singleton(tags$script(src="shinysky/event-input.js")),b))
-}
+eventsButton <- function(inputId, label, events = c("dblclick"), 
+    ...) {
+    
+    b <- actionButton(inputId, label, ..., css.class = "shinysky-eventinput", 
+        `data-shinysky-event-count` = 0, `data-shinysky-last-event` = "", 
+        `data-shinysky-monitored-events` = paste(events, collapse = " ", 
+            ...))
+    return(tagList(singleton(tags$script(src = "shinysky/event-input.js")), 
+        b))
+} 

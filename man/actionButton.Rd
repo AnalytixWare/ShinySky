@@ -34,6 +34,7 @@
 }
 \seealso{
   Other ShinySky.elements: \code{\link{shinyalert}},
-  \code{\link{showshinyalert}}
+  \code{\link{showshinyalert}},
+  \code{\link{textInput.typeahead}}
 }
 

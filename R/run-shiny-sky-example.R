@@ -2,5 +2,5 @@
 #'
 #' @export
 run.shinysky.example <- function() {
-  shiny::runApp(system.file("examples",package="shinysky"))
-}
+    shiny::runApp(system.file("examples", package = "shinysky"))
+} 
