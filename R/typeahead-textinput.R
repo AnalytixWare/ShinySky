@@ -2,6 +2,7 @@
 #' 
 #' A simple typeahead text input component
 #' 
+#' @import RJSONIO
 #' @param id The id of the field
 #' @param placeholder The placeholder text. It is shown in the text input before
 #'   any input has occured
@@ -19,11 +20,11 @@
 #'   
 #' @family ShinySky elements
 #' @export
-textInput.typeahead <- function(id,placeholder,local, valueKey, tokens,template,limit = 20) {
+textinput.typeahead <- function(id,placeholder,local, valueKey, tokens,template,limit = 20) {
   tagList(
       singleton(tags$head(tags$script(src = "shinysky/typeahead/typeahead.min.js")))
     , singleton(tags$head(tags$script(src = "shinysky/typeahead/hogan.js")))
-    , singleton(tags$head(tags$script(src = "shinysky/typeahead/textInput-typeahead.js")))
+    , singleton(tags$head(tags$script(src = "shinysky/typeahead/textinput-typeahead.js")))
     , singleton(tags$head(tags$link(rel="stylesheet",href="shinysky/typeahead/example.css")))
     , HTML(sprintf('<input data-name="%s" type="text" value="" class="input typeahead" placeholder="%s" autocomplete="off" spellcheck="false" style="margin: 0 auto;"/>',id,placeholder))
     , tags$script(HTML(sprintf('update_typeahead("%s",%s,"%s",%s,"%s",%s)',id,toJSON(local),valueKey,toJSON(as.character(tokens)),HTML(template),limit)))
@@ -31,7 +32,7 @@ textInput.typeahead <- function(id,placeholder,local, valueKey, tokens,template,
   
 }
 
-# #' update.textInput.typeahead
+# #' update.textinput.typeahead
 # #' 
 # #' short description
 # #' 
