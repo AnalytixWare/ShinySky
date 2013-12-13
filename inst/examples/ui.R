@@ -23,7 +23,7 @@ shinyUI(basicPage(
       actionButton("id_inverse2","inverse2",styleclass="inverse",block=T),
       actionButton("id_warning2","warning2",styleclass="warning",block=T)))
   ,h3("Typeahead Text Input")
-  ,textinput.typeahead(
+  ,textInput.typeahead(
     id="thti"
     ,placeholder="type 'name' or '2'"
     ,local=data.frame(name=c("name1","name2"),info=c("info1","info2"))
