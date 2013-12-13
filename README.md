@@ -46,7 +46,7 @@ Put some valid HTML in HTMLtext. Here you can specify the style you want using t
 
 ##Typeahead Text Input
 ```
-textinput.typeahead(
+textInput.typeahead(
     id="thti"
     ,placeholder="type 'name' or '2'"
     ,local=data.frame(name=c("name1","name2"),info=c("info1","info2"))
