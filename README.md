@@ -7,13 +7,10 @@ Various UI widgets/components used by AnalytixWare's flaghship product e.g. aler
 
 
 # Install
-
-```
-install.packages("devtools")#if not alrady installed
-devtools::install_github("ShinySky","AnalytixWare")
-require(shinysky)
-shinysky::run.shinysky.example()
-```
+<div style="overflow:auto;"><div class="geshifilter"><pre class="r geshifilter-R" style="font-family:monospace;"><a href="http://inside-r.org/r-doc/utils/install.packages"><span style="color: #003399; font-weight: bold;">install.packages</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;devtools&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #666666; font-style: italic;">#if not alrady installed</span>
+devtools<span style="">::</span>install_github<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;ShinySky&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;AnalytixWare&quot;</span><span style="color: #009900;">&#41;</span>
+<a href="http://inside-r.org/r-doc/base/require"><span style="color: #003399; font-weight: bold;">require</span></a><span style="color: #009900;">&#40;</span>shinysky<span style="color: #009900;">&#41;</span>
+shinysky<span style="">::</span>run.shinysky.example<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span></pre></div></div><p><a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a></p>
 
 
 # Usage
@@ -45,16 +42,15 @@ showshinyalert(id,HTMLtext,session,styleclass)
 Put some valid HTML in HTMLtext. Here you can specify the style you want using the styleclass parameter. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
 
 ##Typeahead Text Input
-```
-textInput.typeahead(
-    id="thti"
-    ,placeholder="type 'name' or '2'"
-    ,local=data.frame(name=c("name1","name2"),info=c("info1","info2"))
-    ,valueKey = "name"
-    ,tokens=c(1,2)
-    ,template = HTML("<p class='repo-language'>{{info}}</p> <p class='repo-name'>{{name}}</p> <p class='repo-description'>You need to learn more CSS to customize this further</p>")
-  )
-```
+<div style="overflow:auto;"><div class="geshifilter"><pre class="r geshifilter-R" style="font-family:monospace;">textInput.typeahead<span style="color: #009900;">&#40;</span>
+    id=<span style="color: #0000ff;">&quot;thti&quot;</span>
+    <span style="color: #339933;">,</span>placeholder=<span style="color: #0000ff;">&quot;type 'name' or '2'&quot;</span>
+    <span style="color: #339933;">,</span><a href="http://inside-r.org/r-doc/base/local"><span style="color: #003399; font-weight: bold;">local</span></a>=<a href="http://inside-r.org/r-doc/base/data.frame"><span style="color: #003399; font-weight: bold;">data.frame</span></a><span style="color: #009900;">&#40;</span>name=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;name1&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;name2&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span>info=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;info1&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;info2&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #339933;">,</span>valueKey = <span style="color: #0000ff;">&quot;name&quot;</span>
+    <span style="color: #339933;">,</span>tokens=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">,</span><span style="color: #cc66cc;">2</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #339933;">,</span>template = HTML<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;&lt;p class='repo-language'&gt;{{info}}&lt;/p&gt; &lt;p class='repo-name'&gt;{{name}}&lt;/p&gt; &lt;p class='repo-description'&gt;You need to learn more CSS to customize this further&lt;/p&gt;&quot;</span><span style="color: #009900;">&#41;</span>
+  <span style="color: #009900;">&#41;</span></pre></div></div><p><a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a></p>
+  
 ##Events Buttons
 
 _eventsButton(inputId, label, events = c("dblclick"))_
