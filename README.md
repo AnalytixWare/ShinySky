@@ -23,7 +23,7 @@ require(shinysky)
 
 _actionButton(inputId, label, styleclass = yourStyle)_
 
-Here you can specify the style you want using the style parameter. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
+Specify the style with the  styleclass argument. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
 
 ##Alerts
 
