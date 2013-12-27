@@ -2,7 +2,7 @@
 \alias{select2Input}
 \title{select2 Input}
 \usage{
-select2Input(inputId, ...)
+select2Input(inputId, label, choices = NULL, selected = NULL, ...)
 }
 \arguments{
   \item{inputId}{Input variable to assign the control's
@@ -19,22 +19,13 @@ select2Input(inputId, ...)
   specified then defaults to the first item for
   single-select lists and no items for multiple select
   lists.}
-
-  \item{multiple}{Is selection of multiple items allowed?}
 }
 \value{
 A select list control that can be added to a UI
 definition.#'
 }
 \description{
-The select2 input. The inputs parameters are the same as
-selectInput
-}
-\examples{
-select2Input("variable", "Variable:",
-            c("Cylinders" = "cyl",
-              "Transmission" = "am",
-              "Gears" = "gear"),multiple=TRUE)
+The select2 input
 }
 \seealso{
 Other ShinySky.elements: \code{\link{actionButton}};

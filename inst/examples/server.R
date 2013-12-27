@@ -44,6 +44,7 @@ shinyServer(function(input, output,session) {
     } else if(input$id_double_click_event$event=="mouseenter") {
       showshinyalert("shinyalert2","You came in! Single click won't change me",session,styleclass="info")
     }
+     #updateSelectInput(session,"select2Input1",choices=c("a","b","c"),selected=c("c","b"))
   })
   
   # typeahead
