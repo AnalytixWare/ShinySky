@@ -16,12 +16,12 @@
 #'    
 #' @export
 select2Input <- function(inputId,label, choices = NULL,selected = NULL,...) {
-  multiple <- ifelse(multiple,"true","false")
   tags.choices <- paste0('"',paste0(choices,collapse='","'),'"')
   tagList(
     singleton(tags$head(tags$link(href="shinysky/select2/select2.css",rel="stylesheet",type="text/css"))),
     singleton(tags$head(tags$script(src="shinysky/select2/select2.js"))),
-    tags$input(id = inputId,value=paste0(selected,collapse=","),...,label),
-    tags$script(sprintf("$(function() { $('#%s').select2({width:'resolve',tags:[%s],multiple:'%s'})})",inputId,tags.choices,multiple))
+    singleton(tags$head(tags$script(src="shinysky/select2Input.js"))),
+    tags$input(id = inputId,value=paste0(selected,collapse=","),class="shinysky-select2Input",...,label),
+    tags$script(sprintf("$(function() { $('#%s').select2({width:'resolve',tags:[%s]})})",inputId,tags.choices))
   )
 }
