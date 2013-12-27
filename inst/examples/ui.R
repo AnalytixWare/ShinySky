@@ -33,7 +33,7 @@ shinyUI(basicPage(
   		div(class="container-fluid span9",
   			shinyalert("shinyalert2"))
   		)
-  ,h4("Typeahead Text Input",class="span12")
+  ,h4("Typeahead Text Input ",class="span12")
   ,div(class="row-fluid span12 well",
   	 div(class="container-fluid span2",
 	  	 textInput.typeahead(
@@ -49,9 +49,18 @@ shinyUI(basicPage(
   	 	,shiny::helpText("Type 'name' or '2' to see the features. ")
   	 	,shinyalert("shinyalert3")
   	 )
-  ),
-  
-  div(class="container-fluid span12"
+  )
+  ,h4("Select2 ",class="span12")
+  ,div(class="row-fluid span12 well",
+       div(class="container-fluid span2",
+         select2Input("select2input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("a","c"),multiple=TRUE)
+       ),
+       div(class="container-fluid span10"
+           ,shiny::helpText("Select2Input ")
+           ,shinyalert("shinyalert4")
+       )
+  )
+  ,div(class="container-fluid span12"
   	,h3("Source Code")
   	,tags$script(src="https://gist.github.com/xiaodaigh/7707701.js")
   	)
