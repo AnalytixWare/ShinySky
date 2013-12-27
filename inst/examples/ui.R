@@ -53,7 +53,7 @@ shinyUI(basicPage(
   ,h4("Select2 ",class="span12")
   ,div(class="row-fluid span12 well",
        div(class="container-fluid span2",
-         select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("b","a"),multiple=TRUE)
+         select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("b","a"))
        ),
        div(class="container-fluid span10"
            ,shiny::helpText("Select2Input ")
