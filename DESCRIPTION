@@ -8,8 +8,7 @@ Maintainer: ZJ <dzj@analytixware.com>
 Description: A set of Shiny UI components includings alerts and styled buttons
 License: MIT
 URL: https://github.com/AnalytixWare/ShinySky
-Depends:
-shiny, RJSONIO
+Depends: shiny, RJSONIO
 Collate:
     'action-button.R'
     'pop-over.R'
