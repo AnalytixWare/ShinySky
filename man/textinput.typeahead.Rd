@@ -2,8 +2,8 @@
 \alias{textInput.typeahead}
 \title{textinput.typeahead}
 \usage{
-  textInput.typeahead(id, placeholder, local, valueKey,
-    tokens, template, limit = 20)
+textInput.typeahead(id, placeholder, local, valueKey, tokens, template,
+  limit = 20)
 }
 \arguments{
   \item{id}{The id of the field}
@@ -31,10 +31,11 @@
   variables in local}
 }
 \description{
-  A simple typeahead text input component
+A simple typeahead text input component
 }
 \seealso{
-  Other ShinySky.elements: \code{\link{actionButton}},
-  \code{\link{shinyalert}}, \code{\link{showshinyalert}}
+Other ShinySky.elements: \code{\link{actionButton}};
+\code{\link{select2Input}}; \code{\link{shinyalert}};
+\code{\link{showshinyalert}}
 }
 

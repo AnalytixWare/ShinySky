@@ -2,7 +2,7 @@
 \alias{eventsButton}
 \title{eventsButton}
 \usage{
-  eventsButton(inputId, label, events = c("dblclick"), ...)
+eventsButton(inputId, label, events = c("dblclick"), ...)
 }
 \arguments{
   \item{inputId}{the id of the function.}
@@ -14,8 +14,7 @@
   \url{http://getbootstrap.com/2.3.2/base-css.html#icons}}
 }
 \description{
-  A button that responds to events click, doubleclick,
-  hover etc. It's built on top of actionButton and
-  eventInput
+A button that responds to events click, doubleclick, hover
+etc. It's built on top of actionButton and eventInput
 }
 

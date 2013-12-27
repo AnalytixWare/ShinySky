@@ -2,8 +2,8 @@
 \alias{actionButton}
 \title{Action button}
 \usage{
-  actionButton(inputId, label, styleclass = "", size = "",
-    block = F, icon = NULL, css.class = "", ...)
+actionButton(inputId, label, styleclass = "", size = "", block = F,
+  icon = NULL, css.class = "", ...)
 }
 \arguments{
   \item{inputId}{Specifies the input slot that will be used
@@ -29,12 +29,12 @@
   add to the action button}
 }
 \description{
-  Creates an action button whose value is initially zero,
-  and increments by one each time it is pressed.
+Creates an action button whose value is initially zero, and
+increments by one each time it is pressed.
 }
 \seealso{
-  Other ShinySky.elements: \code{\link{shinyalert}},
-  \code{\link{showshinyalert}},
-  \code{\link{textInput.typeahead}}
+Other ShinySky.elements: \code{\link{select2Input}};
+\code{\link{shinyalert}}; \code{\link{showshinyalert}};
+\code{\link{textInput.typeahead}}
 }
 

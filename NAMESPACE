@@ -1,6 +1,7 @@
 export(actionButton)
 export(eventsButton)
 export(run.shinysky.example)
+export(select2Input)
 export(shinyalert)
 export(showshinyalert)
 export(textInput.typeahead)
