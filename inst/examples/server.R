@@ -51,4 +51,9 @@ shinyServer(function(input, output,session) {
     input$thti
     showshinyalert("shinyalert3",sprintf("Typeahead Text Input Value: '%s'",input$thti),session,"error")
   })
+  
+  # select2
+  observe({
+    showshinyalert("shinyalert4",paste(input$select2Input1,collapse=","),session,"info")
+  })
 })
