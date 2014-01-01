@@ -1,6 +1,7 @@
 # History files
 .Rhistory
 *.RData
+.RData
 *.sublime-workspace
 # Example code in package build process
 *-Ex.R
