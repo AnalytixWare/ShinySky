@@ -64,10 +64,19 @@ shinyServer(function(input, output,session) {
   
   # select2
   observe({
+    input$updateselect2
+    updateSelect2Input(session,"select2Input1",choices=c("d","e","f"),selected="f",label="hello")
+  })
+  
+  observe({
     showshinyalert("shinyalert4",paste(input$select2Input1,collapse=","),session,"info")
   })
 
   observe({
     showshinyalert("shinyalert5",paste(input$select2Input2,collapse=","),session,"info")
+  })
+
+    observe({
+    showshinyalert("shinyalert6",paste(input$select2Input3,collapse=","),session,"info")
   })
 })
