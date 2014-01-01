@@ -7,6 +7,8 @@ Author: AnalytixWare
 Maintainer: ZJ <dzj@analytixware.com>
 Description: A set of Shiny UI components includings alerts and styled buttons
 License: MIT
+Depends:
+    shiny
 URL: https://github.com/AnalytixWare/ShinySky
 Depends:
     shiny,
