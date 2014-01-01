@@ -35,6 +35,18 @@ shinyServer(function(input, output,session) {
     if(input$id_link==0) return()
     showshinyalert("shinyalert1",paste("You have clicked","link"),session,styleclass="link")
   })
+  observe({
+    if(input$id_inverse2==0) return()
+    showshinyalert("shinyalert1",paste("You have clicked","inverse2"),session,styleclass="inverse")
+  })
+  observe({
+    if(input$id_warning2==0) return()
+    showshinyalert("shinyalert1",paste("You have clicked","warning2"),session,styleclass="warning")
+  })
+
+  
+  
+
   
   # eventsButtons
   observe({
@@ -56,5 +68,9 @@ shinyServer(function(input, output,session) {
   # select2
   observe({
     showshinyalert("shinyalert4",paste(input$select2Input1,collapse=","),session,"info")
+  })
+
+  observe({
+    showshinyalert("shinyalert5",paste(input$select2Input2,collapse=","),session,"info")
   })
 })

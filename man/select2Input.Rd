@@ -2,7 +2,8 @@
 \alias{select2Input}
 \title{select2 Input}
 \usage{
-select2Input(inputId, label, choices = NULL, selected = NULL, ...)
+select2Input(inputId, label, choices = NULL, selected = NULL,
+  type = c("input", "select"), ...)
 }
 \arguments{
   \item{inputId}{Input variable to assign the control's
@@ -19,6 +20,15 @@ select2Input(inputId, label, choices = NULL, selected = NULL, ...)
   specified then defaults to the first item for
   single-select lists and no items for multiple select
   lists.}
+
+  \item{type}{The two valid options are input and select.
+  The input type is similar to a text input and it can
+  remember the order of selection. The select is based on
+  the <select> tags in HTML and is not ordinal hence the
+  order in which you specify the selection is not being
+  taken into account, however it's input parameters are
+  compatible with selectInput and you can use
+  updateSelectInput to update its contents.}
 }
 \value{
 A select list control that can be added to a UI
