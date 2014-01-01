@@ -2,7 +2,8 @@ options(shiny.trace=F) # cahnge to T for trace
 require(shiny)
 require(shinysky)
 
-shinyServer(function(input, output,session) { 
+shinyServer(function(input, output,session) {
+  # actionButtons
   observe({
     if(input$id_blank==0) return()
     showshinyalert("shinyalert1",paste("You have clicked","blank"),session)
@@ -44,10 +45,6 @@ shinyServer(function(input, output,session) {
     showshinyalert("shinyalert1",paste("You have clicked","warning2"),session,styleclass="warning")
   })
 
-  
-  
-
-  
   # eventsButtons
   observe({
     print(input$id_double_click_event)

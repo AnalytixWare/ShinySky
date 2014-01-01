@@ -12,17 +12,15 @@ $.extend(eventInputBinding, {
     }
   },
   subscribe: function(el, callback) {
-
-    //figure_out the events being monitored
+    //figure out the events being monitored
     var elem = $(el)
-    events = elem.data("shinysky-monitored-events").split(" ") //["click","dblclick", "hover"] 
+    events = elem.data("shinysky-monitored-events").split(" ") //e.g. ["click", "dblclick", "hover"]
 
     events.map(function(x) {
       $(el).on(x + ".shinysky-eventinput", function(e) {
         // some code here to change the tags
         $(el).data("shinysky-last-event", x)
         $(el).data("shinysky-event-count", parseInt($(el).data("shinysky-event-count")) + 1)
-        //$(el).data("shinysky-tot-event-count",parseInt($(el).data("shinysky-tot-event-count"))+1)
         callback();
       });
     })
