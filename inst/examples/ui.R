@@ -27,21 +27,29 @@ shinyUI(basicPage(
 
 ,h4("Select2")
   ,div(class="row-fluid ",
-  div(class="well container-fluid"   ,  div(class="container span3",
+  div(class="well container-fluid"   ,  
+    div(class="container span3",
            select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("b","a"))
          ),
          div(class="container span3"
-             ,shiny::helpText("Select2Input")
+             ,helpText("Select2Input")
+             ,actionButton("updateselect2","Update")
              ,shinyalert("shinyalert4")
          ),
          div(class="container span3",
            select2Input("select2Input2","This is a multiple select2Input type = select",choices=c("a","b","c"),selected=c("b","a"),type="select",multiple=TRUE)
          ),
          div(class="container span3"
-             ,shiny::helpText("Select2Input2")
+             ,helpText("Select2Input2")
              ,shinyalert("shinyalert5")
+         )
+        ,     div(class="container span3",
+           select2Input("select2Input3","This is a multiple select2Input type = select",choices=c("a","b","c"),selected=c("b","a"),type="select")
+         ),
+         div(class="container span3"
+             ,helpText("Select2Input2")
+             ,shinyalert("shinyalert6")
          ))
-
   )
       
     ,br()
@@ -77,4 +85,5 @@ div(class="well container-fluid",     div(class="container span3",
   	,h3("Source Code")
   	,tags$script(src="https://gist.github.com/xiaodaigh/7707701.js")
   	)
-  ))
+  )
+)

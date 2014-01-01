@@ -21,7 +21,7 @@
 #' @family ShinySky elements
 #'   
 #' @export
-select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("input","select"),...) {
+select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("input","select"),drag.and.drop = FALSe,...) {
  	type <- match.arg(type)
   	tags.choices <- dQuote(paste0(choices,collapse='","'))
   	if (type == "input") {
@@ -47,7 +47,7 @@ select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("
 #' 
 #' @return the HTML to include the Javascripot and CSS of select2.js
 #' @export
-includeSelect2 <- function() {
+includeSelect2 <- function(drag.and.drop = FALSE) {
   tagList(
   	singleton(tags$head(tags$link(href="shinysky/select2/select2.css",rel="stylesheet",type="text/css"))),
     singleton(tags$head(tags$script(src="shinysky/select2/select2.js"))),
