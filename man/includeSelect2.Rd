@@ -2,7 +2,7 @@
 \alias{includeSelect2}
 \title{includeSelect2}
 \usage{
-includeSelect2()
+includeSelect2(drag.and.drop = FALSE)
 }
 \value{
 the HTML to include the Javascripot and CSS of select2.js

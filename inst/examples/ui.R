@@ -23,19 +23,27 @@ shinyUI(basicPage(
       div(class="container-fluid span6", 
         shiny::helpText("Click any button to show an alert"),
         shinyalert("shinyalert1")
-    ))),
+    )))
 
+,h4("Select2")
+  ,div(class="row-fluid ",
+  div(class="well container-fluid"   ,  div(class="container span3",
+           select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("b","a"))
+         ),
+         div(class="container span3"
+             ,shiny::helpText("Select2Input")
+             ,shinyalert("shinyalert4")
+         ),
+         div(class="container span3",
+           select2Input("select2Input2","This is a multiple select2Input type = select",choices=c("a","b","c"),selected=c("b","a"),type="select",multiple=TRUE)
+         ),
+         div(class="container span3"
+             ,shiny::helpText("Select2Input2")
+             ,shinyalert("shinyalert5")
+         ))
 
-      h4("EventsButtons"),
-
-  	div(class="row-fluid",
-	  	div(class="container-fluid well",div(class="container span2",
-              eventsButton("id_double_click_event","Double click me!",styleclass="danger",events=c("dblclick","mouseenter"))
-            ),
-            div(class="container span10",
-              shinyalert("shinyalert2")
-              ))
-  		)
+  )
+      
     ,br()
   ,h4("Typeahead Text Input ")
   ,div(class="row-fluid ",
@@ -54,24 +62,17 @@ div(class="well container-fluid",     div(class="container span3",
        ,shinyalert("shinyalert3")
      ))
   )
-  ,h4("Select2")
-  ,div(class="row-fluid ",
-  div(class="well container-fluid"   ,  div(class="container span3",
-           select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("b","a"))
-         ),
-         div(class="container span3"
-             ,shiny::helpText("Select2Input")
-             ,shinyalert("shinyalert4")
-         ),
-         div(class="container span3",
-           select2Input("select2Input2","This is a multiple select2Input type = select",choices=c("a","b","c"),selected=c("b","a"),type="select",multiple=TRUE)
-         ),
-         div(class="container span3"
-             ,shiny::helpText("Select2Input2")
-             ,shinyalert("shinyalert5")
-         ))
+  ,h4("EventsButtons")
 
-  )
+    ,div(class="row-fluid",
+      div(class="container-fluid well",div(class="container span2",
+              eventsButton("id_double_click_event","Double click me!",styleclass="danger",events=c("dblclick","mouseenter"))
+            ),
+            div(class="container span10",
+              shinyalert("shinyalert2")
+              ))
+      )
+  
   ,div(class="container-fluid"
   	,h3("Source Code")
   	,tags$script(src="https://gist.github.com/xiaodaigh/7707701.js")
