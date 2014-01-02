@@ -2,8 +2,9 @@
 \alias{select2Input}
 \title{select2 Input}
 \usage{
-select2Input(inputId, label, choices = NULL, selected = NULL,
-  type = c("input", "select"), drag.and.drop = FALSe, ...)
+  select2Input(inputId, label, choices = NULL,
+    selected = NULL, type = c("input", "select"),
+    drag.and.drop = FALSe, ...)
 }
 \arguments{
   \item{inputId}{Input variable to assign the control's
@@ -31,15 +32,15 @@ select2Input(inputId, label, choices = NULL, selected = NULL,
   updateSelectInput to update its contents.}
 }
 \value{
-A select list control that can be added to a UI
-definition.#'
+  A select list control that can be added to a UI
+  definition.#'
 }
 \description{
-The select2 input
+  The select2 input
 }
 \seealso{
-Other ShinySky.elements: \code{\link{actionButton}};
-\code{\link{shinyalert}}; \code{\link{showshinyalert}};
-\code{\link{textInput.typeahead}}
+  Other ShinySky.elements: \code{\link{actionButton}},
+  \code{\link{shinyalert}}, \code{\link{showshinyalert}},
+  \code{\link{textInput.typeahead}}
 }
 

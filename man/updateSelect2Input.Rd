@@ -2,7 +2,8 @@
 \alias{updateSelect2Input}
 \title{updateSelect2Input}
 \usage{
-updateSelect2Input(session, inputId, label, choices = NULL, selected = NULL)
+  updateSelect2Input(session, inputId, label,
+    choices = NULL, selected = NULL)
 }
 \arguments{
   \item{session}{The session}
@@ -16,6 +17,6 @@ updateSelect2Input(session, inputId, label, choices = NULL, selected = NULL)
   \item{selected}{The selected.}
 }
 \description{
-Update select2Input
+  Update select2Input
 }
 

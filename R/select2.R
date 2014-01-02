@@ -1,3 +1,7 @@
+wrap <- function(str,with = '"') {
+  paste0(with,str,with)
+}
+
 #' select2 Input
 #' 
 #' The select2 input
@@ -23,7 +27,7 @@
 #' @export
 select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("input","select"),drag.and.drop = FALSe,...) {
  	type <- match.arg(type)
-  	tags.choices <- dQuote(paste0(choices,collapse='","'))
+  	tags.choices <- wrap(paste0(choices,collapse='","'))
   	if (type == "input") {
 	    tagList(
 	    	includeSelect2(),
