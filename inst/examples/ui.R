@@ -5,7 +5,7 @@ library(shinysky)
 shinyUI(basicPage(
   # Application title
   headerPanel("ShinySky Examples"),  br(), br(),
-  h4("ActionButtons"),
+  div(class="row-fluid",h4("ActionButtons")),
   div(class="row-fluid",
   div(class="well container-fluid" , div(class="container span3",
         actionButton("id_blank","blank",size="large"),

@@ -23,9 +23,13 @@ Shiny.inputBindings.register(select2InputBinding);
 
 // custom handler
 Shiny.addCustomMessageHandler("updateShinySkySelect2", function(data) {
-    choices = data.choices
-    selected = data.selected
-    id = data.id
-    label = data.label //not used yet
-    el = $("#" + id).select2("val", selected)
-  })
+  var choices = data.choices
+  if (typeof data.selected === "string") {
+    var selected = [data.selected]
+  } else {
+    var selected = data.selected
+  }
+  var id = data.id
+  var label = data.label //not used yet
+  var el = $("#" + id).select2("val", selected)
+})
