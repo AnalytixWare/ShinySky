@@ -29,7 +29,7 @@ shinyUI(basicPage(
   ,div(class="row-fluid ",
   div(class="well container-fluid"   ,  
     div(class="container span3",
-           select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("b","a"))
+           select2Input("select2Input1","This is a multiple select2Input. The items are re-arrangeable",choices=c("a","b","c"),selected=c("b","a"))
          ),
          div(class="container span3"
              ,helpText("Select2Input")

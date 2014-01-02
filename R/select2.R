@@ -33,14 +33,20 @@ select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("
 	    	includeSelect2(),
 	    	tags$p(label),
 	      	tags$input(id = inputId,value=paste0(selected,collapse=","),class="shinysky-select2Input",...),
-	      	tags$script(sprintf("$(function() { $('#%s').select2({width:'resolve',tags:[%s]})})",inputId,tags.choices))
+	      	tags$script(sprintf("$(function() { $('#%s').select2({width:'resolve',tags:[%s]})})",inputId,tags.choices)),
+	      	tags$script(sprintf('$(function() {
+				$("#%s").select2("container").find("ul.select2-choices").sortable({
+    				containment: "parent",
+    				start: function() { $("#%s").select2("onSortStart"); },
+    				update: function() { $("#%s").select2("onSortEnd"); }
+					});})',inputId,inputId,inputId))
 	    	)
 	} else if (type == "select") {
 		tagList(
 			includeSelect2(),
 			selectInput(inputId,label,choices,selected,...),
 	      	tags$script(sprintf("$(function() { $('#%s').select2({width:'resolve'})})",inputId))
-	    	)
+	      	)
 	}
 }
 
@@ -53,9 +59,10 @@ select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("
 #' @export
 includeSelect2 <- function(drag.and.drop = FALSE) {
   tagList(
-  	singleton(tags$head(tags$link(href="shinysky/select2/select2.css",rel="stylesheet",type="text/css"))),
-    singleton(tags$head(tags$script(src="shinysky/select2/select2.js"))),
-    singleton(tags$head(tags$script(src="shinysky/select2Input.js")))
+  	singleton(tags$head(tags$link(href="shinysky/select2/select2.css",rel="stylesheet",type="text/css")))
+    ,singleton(tags$head(tags$script(src="shinysky/select2/select2.js")))
+    ,singleton(tags$head(tags$script(src="shinysky/jquery-sortable/js/jquery-ui-1.10.3.custom.min.js")))
+    ,singleton(tags$head(tags$script(src="shinysky/select2Input.js")))
     )
 }
 
