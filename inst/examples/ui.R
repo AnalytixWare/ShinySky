@@ -2,8 +2,7 @@ library(shiny)
 library(shinysky)
 
 # Define UI for miles per gallon application
-shinyUI(basicPage(
-  # Application title
+shinyUI(basicPage(  
   headerPanel("ShinySky Examples"),  br(), br(),
   div(class="row-fluid",h4("ActionButtons")),
   div(class="row-fluid",
@@ -23,13 +22,17 @@ shinyUI(basicPage(
       div(class="container-fluid span6", 
         shiny::helpText("Click any button to show an alert"),
         shinyalert("shinyalert1")
-    )))
-
-,h4("Select2")
+    )
+  )
+),
+  
+  h4("Select2")
   ,div(class="row-fluid ",
   div(class="well container-fluid"   ,  
     div(class="container span3",
-           select2Input("select2Input1","This is a multiple select2Input. The items are re-arrangeable",choices=c("a","b","c"),selected=c("b","a"))
+           select2Input("select2Input1","This is a multiple select2Input. The items are re-arrangeable",
+                        choices=c("a","b","c"),
+                        selected=c("b","a"))
          ),
          div(class="container span3"
              ,helpText("Select2Input")
@@ -37,7 +40,9 @@ shinyUI(basicPage(
              ,shinyalert("shinyalert4")
          ),
          div(class="container span3",
-           select2Input("select2Input2","This is a multiple select2Input type = select",choices=c("a","b","c"),selected=c("b","a"),type="select",multiple=TRUE)
+           select2Input("select2Input2","This is a multiple select2Input type = select",
+                        choices=c("a","b","c"),selected=c("b","a"),
+                        type="select",multiple=TRUE)
          ),
          div(class="container span3"
              ,helpText("Select2Input2")
