@@ -21,3 +21,4 @@ Collate:
     'shiny-alert.R'
     'typeahead-textinput.R'
     'zzz.R'
+    'busy-indicator.r'

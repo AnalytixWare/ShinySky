@@ -85,7 +85,10 @@ div(class="well container-fluid",     div(class="container span3",
               shinyalert("shinyalert2")
               ))
       )
-  
+  ,h4("Busy Indicator")
+  ,busyIndicator(wait = 0)
+  ,actionButton("busyBtn","Show busyInidcator")
+  ,plotOutput("plot1")
   ,div(class="container-fluid"
   	,h3("Source Code")
   	,tags$script(src="https://gist.github.com/xiaodaigh/7707701.js")

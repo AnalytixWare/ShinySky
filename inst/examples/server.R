@@ -12,26 +12,25 @@ shinyServer(function(input, output, session) {
     observe({
         if (input$id_primary == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "primary"), 
-            session, styleclass = "primary")
+        showshinyalert("shinyalert1", paste("You have clicked", "primary"), session, 
+            styleclass = "primary")
     })
     observe({
         if (input$id_info == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "info"), session, 
-            styleclass = "info")
+        showshinyalert("shinyalert1", paste("You have clicked", "info"), session, styleclass = "info")
     })
     observe({
         if (input$id_success == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "success"), 
-            session, styleclass = "success")
+        showshinyalert("shinyalert1", paste("You have clicked", "success"), session, 
+            styleclass = "success")
     })
     observe({
         if (input$id_warning == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "warning"), 
-            session, styleclass = "warning")
+        showshinyalert("shinyalert1", paste("You have clicked", "warning"), session, 
+            styleclass = "warning")
     })
     observe({
         if (input$id_danger == 0) 
@@ -42,26 +41,25 @@ shinyServer(function(input, output, session) {
     observe({
         if (input$id_inverse == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "inverse"), 
-            session, styleclass = "inverse")
+        showshinyalert("shinyalert1", paste("You have clicked", "inverse"), session, 
+            styleclass = "inverse")
     })
     observe({
         if (input$id_link == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "link"), session, 
-            styleclass = "link")
+        showshinyalert("shinyalert1", paste("You have clicked", "link"), session, styleclass = "link")
     })
     observe({
         if (input$id_inverse2 == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "inverse2"), 
-            session, styleclass = "inverse")
+        showshinyalert("shinyalert1", paste("You have clicked", "inverse2"), session, 
+            styleclass = "inverse")
     })
     observe({
         if (input$id_warning2 == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "warning2"), 
-            session, styleclass = "warning")
+        showshinyalert("shinyalert1", paste("You have clicked", "warning2"), session, 
+            styleclass = "warning")
     })
     
     # eventsButtons
@@ -80,8 +78,8 @@ shinyServer(function(input, output, session) {
     # typeahead
     observe({
         input$thti
-        showshinyalert("shinyalert3", sprintf("Typeahead Text Input Value: '%s'", 
-            input$thti), session, "error")
+        showshinyalert("shinyalert3", sprintf("Typeahead Text Input Value: '%s'", input$thti), 
+            session, "error")
     })
     
     # select2
@@ -89,26 +87,33 @@ shinyServer(function(input, output, session) {
         if (input$updateselect2 == 0) 
             return()
         
-        updateSelect2Input(session, "select2Input1", choices = c("d", "e", "f"), 
-            selected = c("f", "d"), label = "hello")
-        updateSelectInput(session, "select2Input2", choices = c("d", "e", "f"), 
-            selected = c("f", "d"), label = "hello")
-        updateSelectInput(session, "select2Input3", choices = c("d", "e", "f"), 
-            selected = "f", label = "hello")
+        updateSelect2Input(session, "select2Input1", choices = c("d", "e", "f"), selected = c("f", 
+            "d"), label = "hello")
+        updateSelectInput(session, "select2Input2", choices = c("d", "e", "f"), selected = c("f", 
+            "d"), label = "hello")
+        updateSelectInput(session, "select2Input3", choices = c("d", "e", "f"), selected = "f", 
+            label = "hello")
     })
     
     observe({
-        showshinyalert("shinyalert4", paste(input$select2Input1, collapse = ","), 
-            session, "info")
+        showshinyalert("shinyalert4", paste(input$select2Input1, collapse = ","), session, 
+            "info")
     })
     
     observe({
-        showshinyalert("shinyalert5", paste(input$select2Input2, collapse = ","), 
-            session, "info")
+        showshinyalert("shinyalert5", paste(input$select2Input2, collapse = ","), session, 
+            "info")
     })
     
     observe({
-        showshinyalert("shinyalert6", paste(input$select2Input3, collapse = ","), 
-            session, "info")
+        showshinyalert("shinyalert6", paste(input$select2Input3, collapse = ","), session, 
+            "info")
+    })
+    
+    output$plot1 <- renderPlot({      
+        if (input$busyBtn == 0) 
+            return()
+        Sys.sleep(3)
+        hist(rnorm(10^3))
     })
 }) 
