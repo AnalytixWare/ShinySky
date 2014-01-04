@@ -17,13 +17,12 @@ busyIndicator <- function(text = "Calculation in progress..",img = "shinysky/bus
   		,div(class="busy",p(text),img(src=img))
   		,tags$script(sprintf(
   		"	setInterval(function(){
-  		 	 if ($('html').hasClass('shiny-busy') {
+  		 	 if ($('html').hasClass('shiny-busy')) {
   		    setTimeout(function() {
-  		      if ($('html').hasClass('shiny-busy') {
+  		      if ($('html').hasClass('shiny-busy')) {
   		        $('div.busy').show()
   		      }
-  		    }, %d)
-  		    
+  		    }, %d)  		    
   		  } else {
   		    $('div.busy').hide()
   		  }
@@ -32,4 +31,3 @@ busyIndicator <- function(text = "Calculation in progress..",img = "shinysky/bus
   			)
 	)	
 }
-

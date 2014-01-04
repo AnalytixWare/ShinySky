@@ -110,7 +110,7 @@ shinyServer(function(input, output, session) {
             "info")
     })
     
-    output$plot1 <- renderPlot({      
+    output$plot1 <- renderPlot({
         if (input$busyBtn == 0) 
             return()
         Sys.sleep(3)
