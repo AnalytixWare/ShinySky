@@ -42,7 +42,7 @@ showshinyalert(id,HTMLtext,session,styleclass)
 Put some valid HTML in HTMLtext. Here you can specify the style you want using the styleclass parameter. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
 
 ##Select2
-The below will createa  multiple select2 with "a", "b", "c" as choices
+The below will create a multiple select2 with "a", "b", "c" as choices
 <div style="overflow:auto;"><div class="geshifilter"><pre class="r geshifilter-R" style="font-family:monospace;">select2Input<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;select2Input1&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;This is a multiple select2Input&quot;</span><span style="color: #339933;">,</span>choices=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;a&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;b&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;c&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span>selected=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;b&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;a&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span></pre></div></div><p><a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a></p>
 
 <a href="www.youtube.com/embed/9T4F-j76Vf0">Video Demo</a>
@@ -60,7 +60,7 @@ The below will createa  multiple select2 with "a", "b", "c" as choices
 ##Busy Indicator
 ###ui.R
 ```
-busyIndicator()
+busyIndicator(wait = 1000)
 ```
 
 Here the wait determines how long to wait before showing the buys indicator. The default is wait=1000, which is one second. This is to prevent short computation triggering the busyIndicator.
