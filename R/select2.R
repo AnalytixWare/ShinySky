@@ -25,7 +25,7 @@ wrap <- function(str,with = '"') {
 #' @family ShinySky elements
 #'   
 #' @export
-select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("input","select"),drag.and.drop = FALSe,...) {
+select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("input","select"),drag.and.drop = FALSE,...) {
  	type <- match.arg(type)
   	tags.choices <- wrap(paste0(choices,collapse='","'))
   	if (type == "input") {
