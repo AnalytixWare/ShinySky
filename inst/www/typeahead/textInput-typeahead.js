@@ -1,5 +1,5 @@
 // function to update typeahead
-function update_typeahead(id, dataset, valueKey, tokens, template, limit) {
+function update_typeahead(id, dataset, valueKey, tokens, template, limit, placeholder) {
   limit = typeof limit !== 'undefined' ? limit : 20;
 
   var el = $("[data-name='" + id + "']");
@@ -17,20 +17,20 @@ function update_typeahead(id, dataset, valueKey, tokens, template, limit) {
         tmpobj[key] = obj_of_arr[key][i]
       })
       if (typeof tokens[i] === "string") {
-        tokens[i] = [tokens[i],tmpobj[valueKey]]
-        //hahaha = tokens[i]
+        tokens[i] = [tokens[i], tmpobj[valueKey]]       
         tmpobj["tokens"] = tokens[i]
       } else {
         tokens[i].push(tmpobj[valueKey])
         tmpobj["tokens"] = tokens[i]
       }
-      //tmpobj["tokens"] = [tokens[i]]
       arr_of_obj.push(tmpobj)
     }
-  }
-  haha = arr_of_obj
-  
-  el.typeahead("destroy") // has to remove previous settings
+  }  
+
+  //remove previous settings
+  el.typeahead("destroy")
+
+  // new typeahead
   el.typeahead({
     local: arr_of_obj,
     valueKey: valueKey,
@@ -38,11 +38,14 @@ function update_typeahead(id, dataset, valueKey, tokens, template, limit) {
     engine: Hogan,
     limit: limit
   })
-}
+
+  // update the placeholder text
+  el.attr("placeholder", placeholder)
+} 
 
 Shiny.addCustomMessageHandler("update_textInput_typeahead", function(data) {
-    update_typeahead(data.id,data.dataset,data.valueKey,data.tokens,data.template,limit)
-   });
+  update_typeahead(data.id, data.dataset, data.valueKey, data.tokens, data.template, data.limit, data.placeholder)
+});
 
 // Typeahead Text input Binding
 var textInput_typeahead_Binding = new Shiny.InputBinding();

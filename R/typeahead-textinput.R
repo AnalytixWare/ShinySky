@@ -31,16 +31,9 @@ textInput.typeahead <- function(id,placeholder,local, valueKey, tokens,template,
   
 }
 
-# #' update.textInput.typeahead
-# #' 
-# #' short description
-# #' 
-# #' @param parm1
-# #'   
-# #' @return {4:description of what is returned}
-# updateVarsTypeAhead <- function(id, data) {
-#   update_textInput_typeahead
-#   
-#   session$sendCustomMessage(type = "typeahead_vars", list(id = id, 
-#                                                           dataset = data, tokens_camelcase = tokens_camelcase, tokens_underscore = tokens_underscore))
-# }
+#' update.textInput.typeahead
+#'
+#' @export
+updateTextInput.typeahead <- function(session,id, dataset, valueKey, tokens, template, limit = 20, placeholder = "") {    
+  session$sendCustomMessage(type = "update_textInput_typeahead", list(id = id, dataset = dataset, valueKey = valueKey, tokens = tokens, template = template, limit = limit, placeholder = placeholder))
+}

@@ -59,8 +59,7 @@ shinyUI(basicPage(
       
     ,br()
   ,h4("Typeahead Text Input ")
-  ,div(class="row-fluid ",
-div(class="well container-fluid",     div(class="container span3",
+  ,div(class="row-fluid ", div(class="well container-fluid",     div(class="container span3",
       helpText("Type 'name' or '2' to see the features. "),
        textInput.typeahead(
         id="thti"
@@ -69,7 +68,8 @@ div(class="well container-fluid",     div(class="container span3",
         ,valueKey = "name"
         ,tokens=c(1,2)
         ,template = HTML("<p class='repo-language'>{{info}}</p> <p class='repo-name'>{{name}}</p> <p class='repo-description'>You need to learn more CSS to customize this further</p>")
-      )
+      ),
+      actionButton("update_typeahead_btn","Update Typeahead", styleclass= "primary")
      ),
      div(class="container span9"
        ,shinyalert("shinyalert3")

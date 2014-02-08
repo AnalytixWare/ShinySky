@@ -4,7 +4,7 @@
 \usage{
   select2Input(inputId, label, choices = NULL,
     selected = NULL, type = c("input", "select"),
-    drag.and.drop = FALSe, ...)
+    drag.and.drop = FALSE, ...)
 }
 \arguments{
   \item{inputId}{Input variable to assign the control's
