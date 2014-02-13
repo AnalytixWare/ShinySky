@@ -24,8 +24,10 @@
  // input binding
  $(document).on('click', '.shinyalert', function() {
       var el = $(this);
-      el.removeClass("in")
-      el.removeClass('fade')
-      el.addClass("out")
-      el.fadeOut("slow")
+      if(el.attr("click-hide") === "TRUE") {
+            el.removeClass("in")
+            el.removeClass('fade')
+            el.addClass("out")
+            el.fadeOut("slow")            
+      }
  });

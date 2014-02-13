@@ -3,15 +3,16 @@
 #' Creates an shinyalert 
 #' 
 #' @param id Specifies the alert id that will be used to access the
+#' @param click.hide If TRUE then clicking on the alert will hide it. Defaults to TRUE
 #'   
 #' @family ShinySky elements
 #' 
 #' @seealso shinyalert
 #'   
 #' @export
-shinyalert <- function(id) {
+shinyalert <- function(id, click.hide = TRUE) {
     tagList(singleton(tags$head(tags$script(src = "shinysky/shinyalert.js"))), 
-        HTML(paste0("<div id=\"", id, "\" class=\"shinyalert alert hide fade\"  data-alert=\"alert\"></div>")))
+        HTML(paste0("<div id=\"", id, "\" class=\"shinyalert alert hide fade\"  data-alert=\"alert\" click-hide=\"",as.character(click.hide),"\"></div>")))
 }
 
 #' showshinyalert
