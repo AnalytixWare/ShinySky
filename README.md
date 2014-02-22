@@ -29,14 +29,16 @@ Specify the style with the  styleclass argument. The possible styles are "primar
 
 ### ui.R
 ```
-shinyalert(id)
+shinyalert(id, click.hide = TRUE, auto.close.after = NULL)
 ```
+In the past clikcing on the alert will hide it. Setting click.hide = FALSE can prevent this behaviour
+The auto.close.after can take a number and will close the alert after this many seconds.
 
 Simply provide an id. The alert will be hidden until you show it using _showshinyalert_ in server.R
 
 ### server.R
 ```
-showshinyalert(id,HTMLtext,session,styleclass)
+showshinyalert(session,id,HTMLtext,styleclass)
 ```
 
 Put some valid HTML in HTMLtext. Here you can specify the style you want using the styleclass parameter. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
