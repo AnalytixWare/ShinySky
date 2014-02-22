@@ -13,12 +13,17 @@
       el.addClass('in');
       el.html(data.HTMLtext);
       el.fadeIn();
-      // setTimeout(function(el) {
-      //   el.removeClass('in');
-      //   el.addClass('out');
-      //   el.removeClass('fade');
-      //   el.fadeOut();
-      //   },1000,el)
+
+      //console.log(Number(el.data("auto-close-after")) * 1000); 
+
+      if(el.data("auto-close-after") !== "") {
+            setTimeout(function(el) {
+              el.removeClass('in');
+              el.addClass('out');
+              el.removeClass('fade');
+              el.fadeOut();
+              },Number(el.data("auto-close-after")) * 1000, el)
+      }
  });
 
  // input binding

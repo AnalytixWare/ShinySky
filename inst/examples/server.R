@@ -7,70 +7,67 @@ shinyServer(function(input, output, session) {
     observe({
         if (input$id_blank == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "blank"), session)
+        showshinyalert(session,"shinyalert1", paste("You have clicked", "blank"))
     })
     observe({
         if (input$id_primary == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "primary"), session, 
-            styleclass = "primary")
+        showshinyalert(session,"shinyalert1", paste("You have clicked", "primary"),            styleclass = "primary")
     })
     observe({
         if (input$id_info == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "info"), session, styleclass = "info")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "info"), styleclass = "info")
     })
     observe({
         if (input$id_success == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "success"), session, 
-            styleclass = "success")
+        showshinyalert(session,"shinyalert1", paste("You have clicked", "success"), styleclass = "success")
     })
     observe({
         if (input$id_warning == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "warning"), session, 
-            styleclass = "warning")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "warning"),             styleclass = "warning")
     })
     observe({
         if (input$id_danger == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "danger", "<button type='button' class='btn btn-danger'>Danger</button>"), 
-            session, styleclass = "danger")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "danger", "<button type='button' class='btn btn-danger'>Danger</button>"), 
+            styleclass = "danger")
     })
     observe({
         if (input$id_inverse == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "inverse"), session, 
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "inverse"),  
             styleclass = "inverse")
     })
     observe({
         if (input$id_link == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "link"), session, styleclass = "link")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "link"), styleclass = "link")
     })
     observe({
         if (input$id_inverse2 == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "inverse2"), session, 
-            styleclass = "inverse")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "inverse2"), styleclass = "inverse")
     })
     observe({
         if (input$id_warning2 == 0) 
             return()
-        showshinyalert("shinyalert1", paste("You have clicked", "warning2"), session, 
-            styleclass = "warning")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "warning2"), styleclass = "warning")
     })
     
     # eventsButtons
     observe({
+        if(is.null(input$id_double_click_even)) {
+          return()
+        }
         print(input$id_double_click_event)
         if (input$id_double_click_event$event == "dblclick") {
-            showshinyalert("shinyalert2", "You have double clicked! Event button can handle doubleclicks", 
-                session)
+            showshinyalert(session,"shinyalert2", "You have double clicked! Event button can handle doubleclicks")
         } else if (input$id_double_click_event$event == "mouseenter") {
-            showshinyalert("shinyalert2", "You came in! Single click won't change me", 
-                session, styleclass = "info")
+            showshinyalert(session,"shinyalert2", "You came in! Single click won't change me", 
+                styleclass = "info")
         }
         # updateSelectInput(session,'select2Input1',choices=c('a','b','c'),selected=c('c','b'))
     })
@@ -78,8 +75,8 @@ shinyServer(function(input, output, session) {
     # typeahead
     observe({
         input$thti
-        showshinyalert("shinyalert3", sprintf("Typeahead Text Input Value: '%s'", input$thti), 
-            session, "error")
+        showshinyalert(session, "shinyalert3", sprintf("Typeahead Text Input Value: '%s'", input$thti), 
+            "error")
     })
     
     # select2
@@ -96,18 +93,15 @@ shinyServer(function(input, output, session) {
     })
     
     observe({
-        showshinyalert("shinyalert4", paste(input$select2Input1, collapse = ","), session, 
-            "info")
+        showshinyalert(session, "shinyalert4", paste(input$select2Input1, collapse = ","), "info")
     })
     
     observe({
-        showshinyalert("shinyalert5", paste(input$select2Input2, collapse = ","), session, 
-            "info")
+        showshinyalert(session,"shinyalert5", paste(input$select2Input2, collapse = ","), "info")
     })
     
     observe({
-        showshinyalert("shinyalert6", paste(input$select2Input3, collapse = ","), session, 
-            "info")
+        showshinyalert(session,"shinyalert6", paste(input$select2Input3, collapse = ","), "info")
     })
     
     output$plot1 <- renderPlot({

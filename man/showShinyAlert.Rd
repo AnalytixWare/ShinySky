@@ -2,7 +2,7 @@
 \alias{showshinyalert}
 \title{showshinyalert}
 \usage{
-  showshinyalert(id, HTMLtext, session,
+  showshinyalert(session, id, HTMLtext,
     styleclass = "success")
 }
 \arguments{

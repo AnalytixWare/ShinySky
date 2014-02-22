@@ -21,7 +21,7 @@ shinyUI(basicPage(
          actionButton("id_warning2","warning2",styleclass="warning",block=T)),
       div(class="container-fluid span6", 
         shiny::helpText("Click any button to show an alert"),
-        shinyalert("shinyalert1", FALSE)
+        shinyalert("shinyalert1", FALSE,auto.close.after = 2)
     )
   )
 ),

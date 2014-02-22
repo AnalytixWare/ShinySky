@@ -2,7 +2,8 @@
 \alias{shinyalert}
 \title{shinyalert}
 \usage{
-  shinyalert(id, click.hide = TRUE)
+  shinyalert(id, click.hide = TRUE,
+    auto.close.after = NULL)
 }
 \arguments{
   \item{id}{Specifies the alert id that will be used to
@@ -10,6 +11,9 @@
 
   \item{click.hide}{If TRUE then clicking on the alert will
   hide it. Defaults to TRUE}
+
+  \item{auto.close.after}{After this many seconds auto
+  close the alert}
 }
 \description{
   Creates an shinyalert
