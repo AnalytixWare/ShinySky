@@ -31,7 +31,7 @@ Specify the style with the  styleclass argument. The possible styles are "primar
 ```
 shinyalert(id, click.hide = TRUE, auto.close.after = NULL)
 ```
-In the past clikcing on the alert will hide it. Setting click.hide = FALSE can prevent this behaviour
+In the past clicking on the alert will hide it. Setting click.hide = FALSE can prevent this behaviour
 The auto.close.after can take a number and will close the alert after this many seconds.
 
 Simply provide an id. The alert will be hidden until you show it using _showshinyalert_ in server.R
