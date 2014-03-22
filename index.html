@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<title>Shinysky by AnalytixWare</title>
+</head>
+
+<body>
+	<header>
+		<div class="inner">
+			<h1>Shinysky</h1>
+			<h2>
+				Various UI widgets/components not part of Shiny e.g. alerts, styled buttons
+			</h2>
+			<a href="https://github.com/AnalytixWare/ShinySky" class="button">
+				<small>View project on</small>
+				GitHub
+			</a>
+		</div>
+	</header>
+
+	<article class="markdown-body entry-content" itemprop="mainContentOfPage">
+
+		<p>
+			<a href="https://github.com/AnalytixWare/ShinySky/blob/master/screenshots/7.png?raw=true" target="_blank">
+				<img src="https://github.com/AnalytixWare/ShinySky/blob/master/screenshots/7.png?raw=true" alt="alt text" title="Examples" style="max-width:100%;"></a>
+		</p>
+
+		<h1>
+			<a name="install" class="anchor" href="#install">
+				<span class="octicon octicon-link"></span>
+			</a>
+			Install
+		</h1>
+
+		<p></p>
+		<div>
+			<div>
+				<pre><a href="http://inside-r.org/r-doc/utils/install.packages">install.packages</a>("devtools")#if not alrady installed
+devtools::install_github("ShinySky","AnalytixWare")
+<a href="http://inside-r.org/r-doc/base/require">require</a>(shinysky)
+shinysky::run.shinysky.example()</pre>
+			</div>
+		</div>
+		<p>
+			<a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a>
+		</p>
+
+		<h1>
+			<a name="usage" class="anchor" href="#usage">
+				<span class="octicon octicon-link"></span>
+			</a>
+			Usage
+		</h1>
+
+		<pre><code>require(shinysky)</code></pre>
+
+		<h2>
+			<a name="action-buttons" class="anchor" href="#action-buttons">
+				<span class="octicon octicon-link"></span>
+			</a>
+			Action Buttons
+		</h2>
+
+		<p> <em>actionButton(inputId, label, styleclass = yourStyle)</em>
+		</p>
+
+		<p>
+			Specify the style with the  styleclass argument. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", ""
+		</p>
+
+		<h2>
+			<a name="alerts" class="anchor" href="#alerts">
+				<span class="octicon octicon-link"></span>
+			</a>
+			Alerts
+		</h2>
+
+		<h3>
+			<a name="uir" class="anchor" href="#uir">
+				<span class="octicon octicon-link"></span>
+			</a>
+			ui.R
+		</h3>
+
+		<pre><code>shinyalert(id, click.hide = TRUE, auto.close.after = NULL)</code></pre>
+
+		<p>
+			In the past clicking on the alert will hide it. Setting click.hide = FALSE can prevent this behaviour
+The auto.close.after can take a number and will close the alert after this many seconds.
+		</p>
+
+		<p>
+			Simply provide an id. The alert will be hidden until you show it using <em>showshinyalert</em>
+			in server.R
+		</p>
+
+		<h3>
+			<a name="serverr" class="anchor" href="#serverr">
+				<span class="octicon octicon-link"></span>
+			</a>
+			server.R
+		</h3>
+
+		<pre><code>showshinyalert(session,id,HTMLtext,styleclass)</code></pre>
+
+		<p>
+			Put some valid HTML in HTMLtext. Here you can specify the style you want using the styleclass parameter. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", ""
+		</p>
+
+		<h2>
+			<a name="select2" class="anchor" href="#select2">
+				<span class="octicon octicon-link"></span>
+			</a>
+			Select2
+		</h2>
+
+		<p>
+			The below will create a multiple select2 with "a", "b", "c" as choices
+		</p>
+		<div>
+			<div>
+				<pre>select2Input("select2Input1","This is a multiple select2Input",choices=<a href="http://inside-r.org/r-doc/base/c">c</a>("a","b","c"),selected=<a href="http://inside-r.org/r-doc/base/c">c</a>("b","a"))</pre>
+			</div>
+		</div>
+		<p>
+			<a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a>
+		</p>
+
+		<p>
+			<a href="/AnalytixWare/ShinySky/blob/master/www.youtube.com/embed/9T4F-j76Vf0">Video Demo</a>
+		</p>
+
+		<h2>
+			<a name="typeahead-text-input" class="anchor" href="#typeahead-text-input">
+				<span class="octicon octicon-link"></span>
+			</a>
+			Typeahead Text Input
+		</h2>
+
+		<p></p>
+		<div>
+			<div>
+				<pre>textInput.typeahead(
+    id="thti"
+    ,placeholder="type 'name' or '2'"
+    ,<a href="http://inside-r.org/r-doc/base/local">local</a>=<a href="http://inside-r.org/r-doc/base/data.frame">data.frame</a>(name=<a href="http://inside-r.org/r-doc/base/c">c</a>("name1","name2"),info=<a href="http://inside-r.org/r-doc/base/c">c</a>("info1","info2"))
+    ,valueKey = "name"
+    ,tokens=<a href="http://inside-r.org/r-doc/base/c">c</a>(1,2)
+    ,template = HTML("&lt;p class='repo-language'&gt;{{info}}&lt;/p&gt; &lt;p class='repo-name'&gt;{{name}}&lt;/p&gt; &lt;p class='repo-description'&gt;You need to learn more CSS to customize this further&lt;/p&gt;")
+  )</pre>
+			</div>
+		</div>
+		<p>
+			<a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a>
+		</p>
+
+		<h2>
+			<a name="busy-indicator" class="anchor" href="#busy-indicator">
+				<span class="octicon octicon-link"></span>
+			</a>
+			Busy Indicator
+		</h2>
+
+		<h3>
+			<a name="uir-1" class="anchor" href="#uir-1">
+				<span class="octicon octicon-link"></span>
+			</a>
+			ui.R
+		</h3>
+
+		<pre><code>busyIndicator(wait = 1000)</code></pre>
+
+		<p>
+			Here the wait determines how long to wait before showing the buys indicator. The default is wait=1000, which is one second. This is to prevent short computation triggering the busyIndicator.
+		</p>
+
+		<h2>
+			<a name="events-buttons" class="anchor" href="#events-buttons">
+				<span class="octicon octicon-link"></span>
+			</a>
+			Events Buttons
+		</h2>
+
+		<p>
+			<em>eventsButton(inputId, label, events = c("dblclick"))</em>
+		</p>
+
+		<p>
+			This button will invalidate (dirty) upon the events. The event does not have to be a "click", in fact the default is dblclick. You can specify multiple events. For a list of event types See:
+			<a href="http://api.jquery.com/category/events/mouse-events/">http://api.jquery.com/category/events/mouse-events/</a>
+		</p>
+
+		<h1>
+			<a name="example" class="anchor" href="#example">
+				<span class="octicon octicon-link"></span>
+			</a>
+			Example
+		</h1>
+
+		<pre><code>shinysky::run.shinysky.example()</code></pre>
+
+		<h1>
+			<a name="github" class="anchor" href="#github">
+				<span class="octicon octicon-link"></span>
+			</a>
+			Github
+		</h1>
+
+		<p>
+			<a href="https://github.com/AnalytixWare/ShinySky">https://github.com/AnalytixWare/ShinySky</a>
+		</p>
+	</article>
+
+</body>
+</html>
