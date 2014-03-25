@@ -2,10 +2,10 @@
 \alias{updateTextInput.typeahead}
 \title{update.textInput.typeahead}
 \usage{
-  updateTextInput.typeahead(session, id, dataset, valueKey,
-    tokens, template, limit = 20, placeholder = "")
+updateTextInput.typeahead(session, id, dataset, valueKey, tokens, template,
+  limit = 20, placeholder = "")
 }
 \description{
-  update.textInput.typeahead
+update.textInput.typeahead
 }
 

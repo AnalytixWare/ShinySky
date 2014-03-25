@@ -2,9 +2,8 @@
 \alias{busyIndicator}
 \title{busyIndicator}
 \usage{
-  busyIndicator(text = "Calculation in progress..",
-    img = "shinysky/busyIndicator/ajaxloaderq.gif",
-    wait = 1000)
+busyIndicator(text = "Calculation in progress..",
+  img = "shinysky/busyIndicator/ajaxloaderq.gif", wait = 1000)
 }
 \arguments{
   \item{text}{The text to show}
@@ -15,6 +14,6 @@
   busy indicator. The default is 1000 which is 1 second.}
 }
 \description{
-  A busy indicator
+A busy indicator
 }
 

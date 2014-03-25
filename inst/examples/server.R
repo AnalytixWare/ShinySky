@@ -121,4 +121,15 @@ shinyServer(function(input, output, session) {
       template <- HTML("First Name: <em>{{firstname}}</em> Last Name: <em>{{lastname}}</em>")
       updateTextInput.typeahead(session, "thti", dataset, valueKey, tokens, template,placeholder = "type 'm' or 'z' to see the updated table")
     })
+    
+    
+    output$hotable1 <- renderHotable({
+      #input$update_typeahead_btn
+      head(iris)
+    }, readOnly = FALSE)
+    
+    observe({
+      df <- hot.to.df(input$hotable1)
+      print(head(df))
+    })
 }) 

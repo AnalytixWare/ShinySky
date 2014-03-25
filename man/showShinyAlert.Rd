@@ -2,8 +2,7 @@
 \alias{showshinyalert}
 \title{showshinyalert}
 \usage{
-  showshinyalert(session, id, HTMLtext,
-    styleclass = "success")
+showshinyalert(session, id, HTMLtext, styleclass = "success")
 }
 \arguments{
   \item{id}{Specifies the alert id that will be used to
@@ -16,14 +15,14 @@
   ,link}
 }
 \description{
-  Used in server.R. Show an alert placed in ui.R with
-  shinyalert
+Used in server.R. Show an alert placed in ui.R with
+shinyalert
 }
 \seealso{
-  shinyalert
+shinyalert
 
-  Other ShinySky.elements: \code{\link{actionButton}},
-  \code{\link{select2Input}}, \code{\link{shinyalert}},
-  \code{\link{textInput.typeahead}}
+Other ShinySky.elements: \code{\link{actionButton}};
+\code{\link{select2Input}}; \code{\link{shinyalert}};
+\code{\link{textInput.typeahead}}
 }
 

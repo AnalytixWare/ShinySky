@@ -9,16 +9,6 @@ Description: A set of Shiny UI components includings alerts and styled buttons
 License: MIT
 Depends:
     shiny,
-    RJSONIO
+    RJSONIO,
+    plyr
 URL: https://github.com/AnalytixWare/ShinySky
-Collate:
-    'action-button.R'
-    'eventsButton.R'
-    'pop-over.R'
-    'rQuery.R'
-    'run-shiny-sky-example.R'
-    'select2.R'
-    'shiny-alert.R'
-    'typeahead-textinput.R'
-    'zzz.R'
-    'busy-indicator.r'
