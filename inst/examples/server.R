@@ -124,7 +124,6 @@ shinyServer(function(input, output, session) {
     
     
     output$hotable1 <- renderHotable({
-      #input$update_typeahead_btn
       head(iris)
     }, readOnly = FALSE)
     
