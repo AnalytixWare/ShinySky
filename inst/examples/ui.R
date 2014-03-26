@@ -4,8 +4,6 @@ library(shinysky)
 # Define UI for miles per gallon application
 shinyUI(basicPage(  
   headerPanel("ShinySky Examples"),  br(), br(),
-  div(class="row-fluid",h4("Handsontable Input/Output")),
-  hotable("hotable1"),
   div(class="row-fluid",h4("ActionButtons")),
   div(class="row-fluid",
   div(class="well container-fluid" , div(class="container span3",
@@ -87,6 +85,8 @@ shinyUI(basicPage(
               shinyalert("shinyalert2")
               ))
       )
+  ,div(class="row-fluid",h4("Handsontable Input/Output"))
+  ,hotable("hotable1")
   ,h4("Busy Indicator")
   ,busyIndicator(wait = 0)
   ,actionButton("busyBtn","Show busyInidcator")

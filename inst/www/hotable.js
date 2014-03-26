@@ -23,10 +23,6 @@ $.extend(hotable, {
   },
   setValue: function(el, value) {},
   subscribe: function(el, callback) {
-    // $(el).on("afterChange.hotable", function(e) {
-    //   callback();
-    // });
-
     $(el).on("afterChange", function(e) {
       callback();
     });

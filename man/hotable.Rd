@@ -4,7 +4,11 @@
 \usage{
 hotable(id)
 }
+\arguments{
+  \item{id}{The id used to refer to the table input$id or
+  output$id}
+}
 \description{
-hotable
+Creates a hotable (handsontable)
 }
 

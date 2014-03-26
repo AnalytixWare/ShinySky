@@ -4,7 +4,11 @@
 \usage{
 hot.to.df(b)
 }
+\arguments{
+  \item{b}{The input$hotable_id value.}
+}
 \description{
-hot.to.df
+Converts the table data passed from the client-side into a
+data.frame
 }
 

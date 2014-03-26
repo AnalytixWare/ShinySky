@@ -73,11 +73,29 @@ _eventsButton(inputId, label, events = c("dblclick"))_
 
 This button will invalidate (dirty) upon the events. The event does not have to be a "click", in fact the default is dblclick. You can specify multiple events. For a list of event types See: http://api.jquery.com/category/events/mouse-events/
 
+#Handsontable Input/Output
+###ui.R
+```
+hotable("hotable1")
+```
+
+This will create a handsontable which you can output using output$hotable1 <- renderHotable({...})
+
+###server.R
+```
+something <- reactive({
+	hot.to.df(input$hotable1) # this will convert your input into a data.frame
+})
+```
+
+
 # Example
 
 ```
 shinysky::run.shinysky.example()
 ```
+
+
 
 # Github
 

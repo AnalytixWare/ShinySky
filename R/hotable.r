@@ -1,5 +1,9 @@
 #' hot.to.df
-#'
+#' 
+#' Converts the table data passed from the client-side into a data.frame
+#' 
+#' @param b The input$hotable_id value.
+#'   
 #' @export
 hot.to.df <- function(b) {
     # if theres is no data
@@ -28,7 +32,11 @@ hot.to.df <- function(b) {
 
 
 #' hotable
-#'
+#' 
+#' Creates a hotable (handsontable)
+#' 
+#' @param id The id used to refer to the table input$id or output$id
+#'   
 #' @export
 hotable <- function(id) {
     tagList(        
@@ -41,7 +49,13 @@ hotable <- function(id) {
 }
 
 #' renderHotable
-#'
+#' 
+#' Renders the hotable.
+#' 
+#' @param expr The computation that leads to an output
+#' @param readOnly A vector of TRUE/FALSE values to indicate which of the 
+#'   columns should be readonly.
+#'   
 #' @export
 renderHotable <- function(expr, env = parent.frame(), quoted = FALSE, 
     options = NULL, readOnly = TRUE) {
