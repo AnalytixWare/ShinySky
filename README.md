@@ -79,7 +79,10 @@ This button will invalidate (dirty) upon the events. The event does not have to 
 hotable("hotable1")
 ```
 
-This will create a handsontable which you can output using output$hotable1 <- renderHotable({...})
+This will create a handsontable which you can output using 
+```
+output$hotable1 <- renderHotable({...})
+```
 
 ###server.R
 ```
@@ -87,7 +90,6 @@ something <- reactive({
 	hot.to.df(input$hotable1) # this will convert your input into a data.frame
 })
 ```
-
 
 # Example
 
