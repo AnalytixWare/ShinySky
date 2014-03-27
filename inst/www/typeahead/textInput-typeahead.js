@@ -57,14 +57,22 @@ $.extend(textInput_typeahead_Binding, {
     return $(el).data("name");
   },
   getValue: function(el) {
-    return $(el).parent().find("span:not([class])").text();
+    ell = el
+    //return $(el).parent().find("span:not([class])").text();
+    return $(el).val()
   },
   setValue: function(el, value) {
     el.value = value;
   },
   subscribe: function(el, callback) {
-    $(el).on('typeahead:selected typeahead:autocompleted', function(obj, datum) {
-      callback(true);
+    $(el).on('typeahead:selected typeahead:autocompleted typeahead:closed', function(obj, datum) {      
+        if(obj.type === "typeahead:closed") {
+          if ($(el).val() === "") {
+            callback(true);
+          }
+        } else {
+          callback(true);  
+        }        
     })
   },
   unsubscribe: function(el) {
