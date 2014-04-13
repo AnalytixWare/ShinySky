@@ -1,0 +1,119 @@
+install.packages("shiny")
+install.packages('shiny')
+shiny::runApp("~SkyScorer/Shiny")
+getwd()
+shiny::runApp("~/SkyScorer/Shiny")
+require(devtools)
+install_github("rCharts","ramnathv")
+shiny::runApp("~/SkyScorer/Shiny")
+shiny::runApp("~/SkyScorer/Shiny/")
+install.packages("rstudio")
+devtools::install_github("rstudio","rstudio")
+shiny::runApp("~/SkyScorer/Shiny/")
+require(parallel)
+detectCores()
+shiny::runApp("~/SkyScorer/Shiny/")
+install.packages("ClustOfVars")
+install.packages("ClustOfVar")
+require(ClustOfVar)
+shiny::runApp("~/SkyScorer/Shiny/")
+n
+mg$m
+summary(mg$m)
+data
+str(data)
+summary(mg)
+mg$m
+summary(mg$m)
+n
+str(data)
+bad_outcome.name
+data[bad_outcome.name
+]
+n
+c
+shiny::runApp("~/SkyScorer/Shiny/")
+n
+str(da)
+n
+ls()
+str(da)
+c
+n
+mdl_score = predict(mdl$m, cbind(da, bad_outcome = data[bad_outcome.name][[1]]))
+str(data)
+mdl$m
+mdl_score = predict(mdl$m, cbind(da, bad_outcome = data[bad_outcome.name]))
+c
+shiny::runApp("~/SkyScorer/Shiny/")
+n
+names(data)
+bad_outcome.name
+n
+str(bad_outcome)
+summary(bad_outcome)
+n
+predict(mdl$m, cbind(da, bad_outcome = bad_outcome))
+c(da,predict(mdl$m, cbind(da, bad_outcome = bad_outcome)))
+n
+da
+n
+da
+n
+a = cbind(da, mdl_score = predict(mdl$m, cbind(da, bad_outcome = bad_outcome))
+)
+nrow(data)
+nrow(da)
+str(bad_outcome)
+mdl_score = predict(mdl$m, cbind(da, bad_outcome = bad_outcome)
+)
+str(mdl_score)
+c
+n
+nrow(mdl_score)
+nrow(da)
+n
+summary(da$bad_outcome)
+is.null(da$bad_outcome)
+n
+help("biglm")
+predict.biglm
+predict.bigglm
+require(biglm)
+?predic
+?predict
+shiny::runApp("~/SkyScorer/Shiny/")
+n
+str(da)
+n
+str(da)
+as.string(bad_outcome.name)
+as.character(bad_outcome.name)
+mdl_score <- predict(mdl$m, cbind(da, as.character(bad_outcome.name) = bad_outcome))
+mdl_score <- predict(mdl$m, cbind(da, sprintf('"%s"',bad_outcome.name) = bad_outcome))
+str(bad_outcome)
+mdl_score <- predict(mdl$m, cbind(da, bad_outcome))
+summary(mdl_score)
+str(da)
+str(bad_outcome)
+bad_outcome.df <- data.frame(x = rep(0,nrow(da)))#
+        names(bad_outcome.df) <- bad_outcome.name#
+        mdl_score <-  predict(mdl$m, cbind(da, bad_outcome.df)
+)
+str(mdl_score)
+c
+shiny::runApp("~/SkyScorer/Shiny/")
+n
+str(mdl_score)
+n
+str(mdl_score)
+names(mdl_score) = 'mdl_score'
+str(mdl_score)
+n
+c
+require(devtools)
+devtools::install_github("devtools","hadley")
+source("/Users/zj/SkyScorer/Scorecard Architect/abba.it.r")
+input$binning_results
+source("/Users/zj/SkyScorer/Shiny/server.R")
+setwd("/Users/zj/ShinySky/inst/examples")

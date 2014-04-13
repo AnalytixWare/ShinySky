@@ -85,8 +85,19 @@ shinyUI(basicPage(
               shinyalert("shinyalert2")
               ))
       )
-  ,div(class="row-fluid",h4("Handsontable Input/Output"))
-  ,hotable("hotable1")
+  ,div(class="well container-fluid", 
+    div(class="row-fluid",h4("Handsontable Input/Output"))
+    ,hotable("hotable1")
+  )
+  ,div(class="well container-fluid", 
+    div(class = "row-fluid", h4("Treeview (based on jstree)")),
+    div(class="row-fluid", 
+      div(class="span2",
+        jstree("jstree1",with(tags,ul(li("empty_folder"),li("folder1",ul(li("file1"),li("file2"))))))
+      )
+      ,div(class="span10", shinyalert("alert_jstree1"))
+    )
+  )
   ,h4("Busy Indicator")
   ,busyIndicator(wait = 0)
   ,actionButton("busyBtn","Show busyInidcator")
