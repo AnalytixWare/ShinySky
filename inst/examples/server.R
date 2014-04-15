@@ -64,7 +64,7 @@ shinyServer(function(input, output, session) {
     
     # eventsButtons
     observe({
-        if(is.null(input$id_double_click_even)) {
+        if(is.null(input$id_double_click_event)) {
           return()
         }
         print(input$id_double_click_event)

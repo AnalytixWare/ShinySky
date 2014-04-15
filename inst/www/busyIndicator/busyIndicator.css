@@ -1,9 +1,9 @@
 div.busy {
-  position:absolute;
+  position:fixed;
   top: 40%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -50px;
+  left: 40%;
+  margin-top:  auto;
+  margin-left:  auto;
   display:none;
   background: rgba(230, 230, 230, .8);
   text-align: center;
