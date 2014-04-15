@@ -86,10 +86,29 @@ output$hotable1 <- renderHotable({...})
 
 ###server.R
 ```
+observe({
+	print(paste0(input$jstree1,collapse=", "))
+})
+
+```
+#JsTree
+###ui.R
+```
+jstree("jstree1",with(tags,ul(li("empty_folder"),li("folder1",ul(li("file1"),li("file2"))))))
+```
+
+This will create a handsontable which you can output using 
+```
+output$hotable1 <- renderHotable({...})
+```
+
+###server.R
+```
 something <- reactive({
 	hot.to.df(input$hotable1) # this will convert your input into a data.frame
 })
 ```
+
 
 # Example
 
