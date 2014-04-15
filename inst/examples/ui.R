@@ -20,8 +20,8 @@ shinyUI(basicPage(
          actionButton("id_inverse2","inverse2",styleclass="inverse",block=T),
          actionButton("id_warning2","warning2",styleclass="warning",block=T)),
       div(class="container-fluid span6", 
-        shiny::helpText("Click any button to show an alert"),
-        shinyalert("shinyalert1", FALSE,auto.close.after = 2)
+        shiny::helpText("Click any button to show an alert. The alert will automatically close after 5 seconds"),
+        shinyalert("shinyalert1", FALSE,auto.close.after = 5)
     )
   )
 ),
@@ -40,7 +40,7 @@ shinyUI(basicPage(
              ,shinyalert("shinyalert4")
          ),
          div(class="container span3",
-           select2Input("select2Input2","This is a multiple select2Input type = select",
+           select2Input("select2Input2","This is a multiple select2Input type = select. The items are NOT re-arrangeable",
                         choices=c("a","b","c"),selected=c("b","a"),
                         type="select",multiple=TRUE)
          ),
@@ -76,7 +76,6 @@ shinyUI(basicPage(
      ))
   )
   ,h4("EventsButtons")
-
     ,div(class="row-fluid",
       div(class="container-fluid well",div(class="container span2",
               eventsButton("id_double_click_event","Double click me!",styleclass="danger",events=c("dblclick","mouseenter"))
@@ -85,15 +84,22 @@ shinyUI(basicPage(
               shinyalert("shinyalert2")
               ))
       )
-  ,div(class="row-fluid",h4("Handsontable Input/Output"))
-  ,hotable("hotable1")
+  ,div(class="well container-fluid", 
+    div(class="row-fluid",h4("Handsontable Input/Output"))
+    ,hotable("hotable1")
+  )
+  ,div(class="well container-fluid", 
+    div(class = "row-fluid", h4("Treeview (based on jstree)")),
+    div(class="row-fluid", 
+      div(class="span2",
+        jstree("jstree1",with(tags,ul(li("empty_folder"),li("folder1",ul(li("file1"),li("file2"))))))
+      )
+      ,div(class="span10", shinyalert("alert_jstree1"))
+    )
+  )
   ,h4("Busy Indicator")
   ,busyIndicator(wait = 0)
   ,actionButton("busyBtn","Show busyInidcator")
   ,plotOutput("plot1")
-  ,div(class="container-fluid"
-  	,h3("Source Code")
-  	,tags$script(src="https://gist.github.com/xiaodaigh/7707701.js")
-  	)
   )
 )
