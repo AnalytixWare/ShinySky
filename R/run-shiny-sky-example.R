@@ -6,6 +6,6 @@ run.shinysky.example <- function(example = c("0_all","1_buttons&alerts","2_selec
 		example <- match.arg(example)
 		shiny::runApp(file.path(system.file("examples", package = "shinysky"),example), display.mode = "showcase")
 	}, error = function(e) {
-		print(paste("Valid Examples are", paste(dir(system.file("examples", package = "shinysky")),collapse=", ")))
+		print(paste0("Valid Examples are '", paste(dir(system.file("examples", package = "shinysky")),collapse="', '"),"'"))
 	})
 } 
