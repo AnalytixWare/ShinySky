@@ -11,10 +11,10 @@ shinyServer(function(input, output, session) {
         
         updateSelect2Input(session, "select2Input1", choices = c("d", "e", "f"), selected = c("f", 
             "d"), label = "hello")
-        updateSelectInput(session, "select2Input2", choices = c("d", "e", "f"), selected = c("f", 
-            "d"), label = "hello")
-        updateSelectInput(session, "select2Input3", choices = c("d", "e", "f"), selected = "f", 
-            label = "hello")
+        #updateSelectInput(session, "select2Input2", choices = c("d", "e", "f"), selected = c("f", 
+        #    "d"), label = "hello")
+        #updateSelectInput(session, "select2Input3", choices = c("d", "e", "f"), selected = "f", 
+        #    label = "hello")
     })
     
     observe({
