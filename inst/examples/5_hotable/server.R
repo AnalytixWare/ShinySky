@@ -3,13 +3,13 @@ require(shiny)
 require(shinysky)
 
 shinyServer(function(input, output, session) {
-    #hotable
+    # hotable
     output$hotable1 <- renderHotable({
-      head(iris)
+        head(iris)
     }, readOnly = FALSE)
     
     observe({
-      df <- hot.to.df(input$hotable1)
-      print(head(df))
+        df <- hot.to.df(input$hotable1)
+        print(head(df))
     })
 }) 

@@ -3,7 +3,7 @@ require(shiny)
 require(shinysky)
 
 shinyServer(function(input, output, session) {
-    #busyIndicator
+    # busyIndicator
     output$plot1 <- renderPlot({
         if (input$busyBtn == 0) 
             return()

@@ -5,19 +5,21 @@ require(shinysky)
 shinyServer(function(input, output, session) {
     # jstree
     observe({
-      showshinyalert(session, "alert_jstree1",paste0("You selected these items in the tree: ",paste0(input$jstree1,collapse=", ")))
+        showshinyalert(session, "alert_jstree1", paste0("You selected these items in the tree: ", 
+            paste0(input$jstree1, collapse = ", ")))
     })
     
     # actionButtons
     observe({
         if (input$id_blank == 0) 
             return()
-        showshinyalert(session,"shinyalert1", paste("You have clicked", "blank"))
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "blank"))
     })
     observe({
         if (input$id_primary == 0) 
             return()
-        showshinyalert(session,"shinyalert1", paste("You have clicked", "primary"),            styleclass = "primary")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "primary"), 
+            styleclass = "primary")
     })
     observe({
         if (input$id_info == 0) 
@@ -27,12 +29,14 @@ shinyServer(function(input, output, session) {
     observe({
         if (input$id_success == 0) 
             return()
-        showshinyalert(session,"shinyalert1", paste("You have clicked", "success"), styleclass = "success")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "success"), 
+            styleclass = "success")
     })
     observe({
         if (input$id_warning == 0) 
             return()
-        showshinyalert(session, "shinyalert1", paste("You have clicked", "warning"),             styleclass = "warning")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "warning"), 
+            styleclass = "warning")
     })
     observe({
         if (input$id_danger == 0) 
@@ -43,7 +47,7 @@ shinyServer(function(input, output, session) {
     observe({
         if (input$id_inverse == 0) 
             return()
-        showshinyalert(session, "shinyalert1", paste("You have clicked", "inverse"),  
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "inverse"), 
             styleclass = "inverse")
     })
     observe({
@@ -54,24 +58,26 @@ shinyServer(function(input, output, session) {
     observe({
         if (input$id_inverse2 == 0) 
             return()
-        showshinyalert(session, "shinyalert1", paste("You have clicked", "inverse2"), styleclass = "inverse")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "inverse2"), 
+            styleclass = "inverse")
     })
     observe({
         if (input$id_warning2 == 0) 
             return()
-        showshinyalert(session, "shinyalert1", paste("You have clicked", "warning2"), styleclass = "warning")
+        showshinyalert(session, "shinyalert1", paste("You have clicked", "warning2"), 
+            styleclass = "warning")
     })
     
     # eventsButtons
     observe({
-        if(is.null(input$id_double_click_event)) {
-          return()
+        if (is.null(input$id_double_click_event)) {
+            return()
         }
         print(input$id_double_click_event)
         if (input$id_double_click_event$event == "dblclick") {
-            showshinyalert(session,"shinyalert2", "You have double clicked! Event button can handle doubleclicks")
+            showshinyalert(session, "shinyalert2", "You have double clicked! Event button can handle doubleclicks")
         } else if (input$id_double_click_event$event == "mouseenter") {
-            showshinyalert(session,"shinyalert2", "You came in! Single click won't change me", 
+            showshinyalert(session, "shinyalert2", "You came in! Single click won't change me", 
                 styleclass = "info")
         }
         # updateSelectInput(session,'select2Input1',choices=c('a','b','c'),selected=c('c','b'))
@@ -80,8 +86,8 @@ shinyServer(function(input, output, session) {
     # typeahead
     observe({
         input$thti
-        showshinyalert(session, "shinyalert3", sprintf("Typeahead Text Input Value: '%s'", input$thti), 
-            "error")
+        showshinyalert(session, "shinyalert3", sprintf("Typeahead Text Input Value: '%s'", 
+            input$thti), "error")
     })
     
     # select2
@@ -98,18 +104,21 @@ shinyServer(function(input, output, session) {
     })
     
     observe({
-        showshinyalert(session, "shinyalert4", paste(input$select2Input1, collapse = ","), "info")
+        showshinyalert(session, "shinyalert4", paste(input$select2Input1, collapse = ","), 
+            "info")
     })
     
     observe({
-        showshinyalert(session,"shinyalert5", paste(input$select2Input2, collapse = ","), "info")
+        showshinyalert(session, "shinyalert5", paste(input$select2Input2, collapse = ","), 
+            "info")
     })
     
     observe({
-        showshinyalert(session,"shinyalert6", paste(input$select2Input3, collapse = ","), "info")
+        showshinyalert(session, "shinyalert6", paste(input$select2Input3, collapse = ","), 
+            "info")
     })
     
-    #busyIndicator
+    # busyIndicator
     output$plot1 <- renderPlot({
         if (input$busyBtn == 0) 
             return()
@@ -117,25 +126,26 @@ shinyServer(function(input, output, session) {
         hist(rnorm(10^3))
     })
     
-    #typeahead
+    # typeahead
     observe({
-      if(input$update_typeahead_btn == 0) {
-        return()
-      }
-      dataset <- data.frame(firstname = c("ZJ", "Mitchell"), lastname = c("Dai","Joblin"))
-      valueKey <- "lastname"
-      tokens <- c("zd","mj",dataset$firstname)
-      template <- HTML("First Name: <em>{{firstname}}</em> Last Name: <em>{{lastname}}</em>")
-      updateTextInput.typeahead(session, "thti", dataset, valueKey, tokens, template,placeholder = "type 'm' or 'z' to see the updated table")
+        if (input$update_typeahead_btn == 0) {
+            return()
+        }
+        dataset <- data.frame(firstname = c("ZJ", "Mitchell"), lastname = c("Dai", "Joblin"))
+        valueKey <- "lastname"
+        tokens <- c("zd", "mj", dataset$firstname)
+        template <- HTML("First Name: <em>{{firstname}}</em> Last Name: <em>{{lastname}}</em>")
+        updateTextInput.typeahead(session, "thti", dataset, valueKey, tokens, template, 
+            placeholder = "type 'm' or 'z' to see the updated table")
     })
     
-    #hotable
+    # hotable
     output$hotable1 <- renderHotable({
-      head(iris)
+        head(iris)
     }, readOnly = FALSE)
     
     observe({
-      df <- hot.to.df(input$hotable1)
-      print(head(df))
+        df <- hot.to.df(input$hotable1)
+        print(head(df))
     })
 }) 
