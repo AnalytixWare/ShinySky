@@ -90,12 +90,12 @@ shinyUI(basicPage(
               shinyalert("shinyalert2")
               ))
       )
-  ,div(class="well container-fluid", 
-    div(class="row-fluid",h4("Handsontable Input/Output"))
+    ,h4("Handsontable Input/Output")
+  ,div(class="well container-fluid"
     ,hotable("hotable1")
   )
+   ,h4("Treeview (based on jstree)")
   ,div(class="well container-fluid", 
-    div(class = "row-fluid", h4("Treeview (based on jstree)")),
     div(class="row-fluid", 
       div(class="span2",
         jstree("jstree1",jstree.obj(nav))

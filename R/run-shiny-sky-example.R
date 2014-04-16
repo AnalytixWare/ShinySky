@@ -8,6 +8,4 @@ run.shinysky.example <- function(example = c("0_all","1_buttons&alerts","2_selec
 	}, error = function(e) {
 		print(paste("Valid Examples are", paste(dir(system.file("examples", package = "shinysky")),collapse=", ")))
 	})
-
-	
 } 
