@@ -2,7 +2,7 @@
 \alias{jstree.obj}
 \title{jstree.obj}
 \usage{
-jstree.obj(tree.list)
+jstree.obj(x)
 }
 \arguments{
   \item{id}{The id used to refer to the jstree}

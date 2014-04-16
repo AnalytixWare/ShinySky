@@ -1,6 +1,12 @@
 library(shiny)
 library(shinysky)
 
+nav = list(
+  "Branch"=list("twig"=list("leafOnTwigA","leafOnTwigB" ),"leafOnBranch"),
+  "Topleaf"
+)
+
+
 # Define UI for miles per gallon application
 shinyUI(basicPage(  
   headerPanel("ShinySky Examples"),  br(), br(),
@@ -92,7 +98,7 @@ shinyUI(basicPage(
     div(class = "row-fluid", h4("Treeview (based on jstree)")),
     div(class="row-fluid", 
       div(class="span2",
-        jstree("jstree1",with(tags,ul(li("empty_folder"),li("folder1",ul(li("file1"),li("file2"))))))
+        jstree("jstree1",jstree.obj(nav))
       )
       ,div(class="span10", shinyalert("alert_jstree1"))
     )
