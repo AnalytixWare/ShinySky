@@ -7,37 +7,41 @@ Various UI widgets/components used by AnalytixWare's flaghship product e.g. aler
 
 
 # Install
-<div style="overflow:auto;"><div class="geshifilter"><pre class="r geshifilter-R" style="font-family:monospace;"><a href="http://inside-r.org/r-doc/utils/install.packages"><span style="color: #003399; font-weight: bold;">install.packages</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;devtools&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #666666; font-style: italic;">#if not alrady installed</span>
-devtools<span style="">::</span>install_github<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;ShinySky&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;AnalytixWare&quot;</span><span style="color: #009900;">&#41;</span>
-<a href="http://inside-r.org/r-doc/base/require"><span style="color: #003399; font-weight: bold;">require</span></a><span style="color: #009900;">&#40;</span>shinysky<span style="color: #009900;">&#41;</span>
-shinysky<span style="">::</span>run.shinysky.example<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span></pre></div></div><p><a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a></p>
+```s
+install.packages("devtools")#if not alrady installed
+devtools::install_github("ShinySky","AnalytixWare")
+require(shinysky)
+shinysky::run.shinysky.example()
+```
 
 
 # Usage
 
-```
+```s
 require(shinysky)
 ```
 
 ##Action Buttons
-
-_actionButton(inputId, label, styleclass = yourStyle)_
+```s
+actionButton(inputId, label, styleclass = yourStyle)
+```
 
 Specify the style with the  styleclass argument. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
 
 ##Alerts
 
 ### ui.R
-```
+```s
 shinyalert(id, click.hide = TRUE, auto.close.after = NULL)
 ```
+
 In the past clicking on the alert will hide it. Setting click.hide = FALSE can prevent this behaviour
 The auto.close.after can take a number and will close the alert after this many seconds.
 
 Simply provide an id. The alert will be hidden until you show it using _showshinyalert_ in server.R
 
 ### server.R
-```
+```s
 showshinyalert(session,id,HTMLtext,styleclass)
 ```
 
@@ -45,25 +49,31 @@ Put some valid HTML in HTMLtext. Here you can specify the style you want using t
 
 ##Select2
 The below will create a multiple select2 with "a", "b", "c" as choices
-<div style="overflow:auto;"><div class="geshifilter"><pre class="r geshifilter-R" style="font-family:monospace;">select2Input<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;select2Input1&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;This is a multiple select2Input&quot;</span><span style="color: #339933;">,</span>choices=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;a&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;b&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;c&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span>selected=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;b&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;a&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span></pre></div></div><p><a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a></p>
+```s
+select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("b","a"))
+```
 
+###Video Demo
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=9T4F-j76Vf0
 " target="_blank"><img src="http://img.youtube.com/vi/9T4F-j76Vf0/0.jpg" 
 alt="Video Demo" width="240" height="180" border="10" /></a>
 
 ##Typeahead Text Input
-<div style="overflow:auto;"><div class="geshifilter"><pre class="r geshifilter-R" style="font-family:monospace;">textInput.typeahead<span style="color: #009900;">&#40;</span>
-    id=<span style="color: #0000ff;">&quot;thti&quot;</span>
-    <span style="color: #339933;">,</span>placeholder=<span style="color: #0000ff;">&quot;type 'name' or '2'&quot;</span>
-    <span style="color: #339933;">,</span><a href="http://inside-r.org/r-doc/base/local"><span style="color: #003399; font-weight: bold;">local</span></a>=<a href="http://inside-r.org/r-doc/base/data.frame"><span style="color: #003399; font-weight: bold;">data.frame</span></a><span style="color: #009900;">&#40;</span>name=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;name1&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;name2&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span>info=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;info1&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;info2&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span>
-    <span style="color: #339933;">,</span>valueKey = <span style="color: #0000ff;">&quot;name&quot;</span>
-    <span style="color: #339933;">,</span>tokens=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">,</span><span style="color: #cc66cc;">2</span><span style="color: #009900;">&#41;</span>
-    <span style="color: #339933;">,</span>template = HTML<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;&lt;p class='repo-language'&gt;{{info}}&lt;/p&gt; &lt;p class='repo-name'&gt;{{name}}&lt;/p&gt; &lt;p class='repo-description'&gt;You need to learn more CSS to customize this further&lt;/p&gt;&quot;</span><span style="color: #009900;">&#41;</span>
-  <span style="color: #009900;">&#41;</span></pre></div></div><p><a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a></p>
+```s
+textInput.typeahead(
+    id="thti"
+    ,placeholder="type 'name' or '2'"
+    ,local=data.frame(name=c("name1","name2"),info=c("info1","info2"))
+    ,valueKey = "name"
+    ,tokens=c(1,2)
+    ,template = HTML("<p class='repo-language'>{{info}}</p> <p class='repo-name'>{{name}}</p> <p class='repo-description'>You need to learn more CSS to customize this further</p>")
+  )
+```
 
 ##Busy Indicator
 ###ui.R
-```
+
+```s
 busyIndicator(wait = 1000)
 ```
 
@@ -71,23 +81,28 @@ Here the wait determines how long to wait before showing the buys indicator. The
 
 ##Events Buttons
 
-_eventsButton(inputId, label, events = c("dblclick"))_
+```s
+eventsButton(inputId, label, events = c("dblclick"))
+```
 
 This button will invalidate (dirty) upon the events. The event does not have to be a "click", in fact the default is dblclick. You can specify multiple events. For a list of event types See: http://api.jquery.com/category/events/mouse-events/
 
 #Handsontable Input/Output
 ###ui.R
-```
+
+```s
 hotable("hotable1")
 ```
 
 This will create a handsontable which you can output using 
-```
+
+```s
 output$hotable1 <- renderHotable({...})
 ```
 
 ###server.R
-```
+
+```s
 something <- reactive({
 	hot.to.df(input$hotable1) # this will convert your input into a data.frame
 })
@@ -95,12 +110,13 @@ something <- reactive({
 
 #jsTree
 ###ui.R
-```
+
+```s
 jstree("jstree1",with(tags,ul(li("empty_folder"),li("folder1",ul(li("file1"),li("file2"))))))
 ```
 
 ###server.R
-```
+```s
 observe({
 	print(paste0(input$jstree1,collapse=", "))
 })
@@ -110,13 +126,13 @@ observe({
 
 # Example
 
-```
+```s
 shinysky::run.shinysky.example()
 ```
 
 or to run individual examples. You can use
 
-```
+```s
 n = "2"
 shinysky::run.shinysky.example("n")
 ```
