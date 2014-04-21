@@ -47,7 +47,9 @@ Put some valid HTML in HTMLtext. Here you can specify the style you want using t
 The below will create a multiple select2 with "a", "b", "c" as choices
 <div style="overflow:auto;"><div class="geshifilter"><pre class="r geshifilter-R" style="font-family:monospace;">select2Input<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;select2Input1&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;This is a multiple select2Input&quot;</span><span style="color: #339933;">,</span>choices=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;a&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;b&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;c&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span>selected=<a href="http://inside-r.org/r-doc/base/c"><span style="color: #003399; font-weight: bold;">c</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;b&quot;</span><span style="color: #339933;">,</span><span style="color: #0000ff;">&quot;a&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span></pre></div></div><p><a href="http://www.inside-r.org/pretty-r" title="Created by Pretty R at inside-R.org">Created by Pretty R at inside-R.org</a></p>
 
-<a href="www.youtube.com/embed/9T4F-j76Vf0">Video Demo</a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=9T4F-j76Vf0
+" target="_blank"><img src="http://img.youtube.com/vi/9T4F-j76Vf0/0.jpg" 
+alt="Video Demo" width="240" height="180" border="10" /></a>
 
 ##Typeahead Text Input
 <div style="overflow:auto;"><div class="geshifilter"><pre class="r geshifilter-R" style="font-family:monospace;">textInput.typeahead<span style="color: #009900;">&#40;</span>
@@ -91,7 +93,7 @@ something <- reactive({
 })
 ```
 
-#JsTree
+#jsTree
 ###ui.R
 ```
 jstree("jstree1",with(tags,ul(li("empty_folder"),li("folder1",ul(li("file1"),li("file2"))))))
