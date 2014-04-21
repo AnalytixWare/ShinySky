@@ -112,9 +112,9 @@ observe({
 shinysky::run.shinysky.example()
 ```
 
+or to run individual examples. You can use
 
-
-# Github
-
-https://github.com/AnalytixWare/ShinySky
-
+```
+n = "2"
+shinysky::run.shinysky.example("n")
+```
