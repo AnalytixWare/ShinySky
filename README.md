@@ -130,9 +130,9 @@ observe({
 shinysky::run.shinysky.example()
 ```
 
-or to run individual examples. You can use
+or to run individual examples. You can use for example
 
 ```s
 n = "2"
-shinysky::run.shinysky.example("n")
+shinysky::run.shinysky.example(n)
 ```
