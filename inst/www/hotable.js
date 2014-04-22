@@ -40,7 +40,6 @@ $.extend(hotableOutput, {
     return $(scope).find('.hotable');
   },
   renderValue: function(el, json) {
-    
     if (json === null) return;
     if (!json.hasOwnProperty("data")) return;
 
@@ -83,6 +82,7 @@ $.extend(hotableOutput, {
     ht.addHook("afterChange", function() {
       $(el).trigger("afterChange")
     })
+    $(el).trigger("afterChange")
   }
 });
 Shiny.outputBindings.register(hotableOutput, "hotable");
