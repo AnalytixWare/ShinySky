@@ -123,6 +123,14 @@ observe({
 
 ```
 
+#jscolorInput
+##ui.R
+
+```s
+jscolorInput("jscolorInput1")
+```
+
+![alt text](https://github.com/AnalytixWare/ShinySky/blob/master/screenshots/jscolor.png?raw=true "jscolorInput")
 
 # Example
 
