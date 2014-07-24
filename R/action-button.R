@@ -40,6 +40,8 @@ actionButton <- function(inputId, label, styleclass = "", size = "",
     if (!is.null(icon)) {
         if( !(icon.library[1] %in% c("font awesome", "bootstrap")) ){
           icon.set = "font awesome"
+        }else{
+          icon.set = icon.library[1]
         }
         set = switch(icon.set,
                      "font awesome" = "fa fa-",
