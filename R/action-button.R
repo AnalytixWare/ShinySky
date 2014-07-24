@@ -12,6 +12,8 @@
 #' @param size The size of the button--options are large, small, mini
 #' @param block Whehter the button should fill the block
 #' @param icon Display an icon for the button
+#' @param specify icon set to use
+#'   \url{http://www.fontawesome.io/icons} or
 #'   \url{http://getbootstrap.com/2.3.2/base-css.html#icons}
 #' @param css.class Any additional CSS class one wishes to add to the action 
 #'   button
