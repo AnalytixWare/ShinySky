@@ -38,10 +38,7 @@ actionButton <- function(inputId, label, styleclass = "", size = "",
     } else btn.block = ""
     
     if (!is.null(icon)) {
-        if( length(icon.library) > 1 ){
-          icon.set = icon.library[1]
-        }
-        if( !(icon.set %in% c("font awesome", "bootstrap")) ){
+        if( !(icon.library[1] %in% c("font awesome", "bootstrap")) ){
           icon.set = "font awesome"
         }
         set = switch(icon.set,
