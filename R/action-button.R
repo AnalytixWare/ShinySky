@@ -21,7 +21,7 @@
 #'   
 #' @export
 actionButton <- function(inputId, label, styleclass = "", size = "", 
-    block = F, icon = NULL, css.class = "", ...) {
+    block = F, icon = NULL, icon.library = c("font awesome", "bootstrap"),  css.class = "", ...) {
     if (styleclass %in% c("primary", "info", "success", "warning", 
         "danger", "inverse", "link")) {
         btn.css.class <- paste("btn", styleclass, sep = "-")
@@ -36,7 +36,16 @@ actionButton <- function(inputId, label, styleclass = "", size = "",
     } else btn.block = ""
     
     if (!is.null(icon)) {
-        icon.code <- HTML(paste0("<i class='icon-", icon, "'></i>"))
+        if( length(icon.library) > 1 ){
+          icon.set = icon.library[1]
+        }
+        if( !(icon.set %in% c("font awesome", "bootstrap")) ){
+          icon.set = "font awesome"
+        }
+        set = switch(icon.set,
+                     "font awesome" = "fa-",
+                     "bootstrap" = "icon-")
+        icon.code <- HTML(paste0("<i class=", set, icon, "'></i>"))
     } else icon.code = ""
     
     tags$button(id = inputId, type = "button", class = paste("btn action-button", 
