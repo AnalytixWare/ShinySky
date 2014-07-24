@@ -144,3 +144,16 @@ or to run individual examples. You can use for example
 n = "2"
 shinysky::run.shinysky.example(n)
 ```
+
+
+# Install
+If you have the `devtools` package installed already simply run
+
+```s
+devtools::install_github("dcurrier/ShinySky")
+```
+
+If you need `devtools` run this first
+```s
+install.packages(devtools)
+```
