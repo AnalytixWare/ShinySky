@@ -25,7 +25,7 @@ actionButton(inputId, label, styleclass = "", size = "", block = F,
   \item{icon}{Display an icon for the button}
   
   \item{icon.library}{Choose the icon library to source the icon from
-  options are: \code{font awesome} (\url{htt://www.fontawesome.io/icons/}) and
+  options are: \code{font awesome} (\url{http://www.fontawesome.io/icons/}) and
   \code{bootstrap} (\url{http://getbootstrap.com/2.3.2/base-css.html#icons})}
   
   \item{css.class}{Any additional CSS class one wishes to
