@@ -14,7 +14,7 @@ busyIndicator <- function(text = "Calculation in progress..",img = "shinysky/bus
     		tags$link(rel="stylesheet", type="text/css",href="shinysky/busyIndicator/busyIndicator.css")
     		# ,tags$script(type="text/javascript", src = "busy.js")
   			))
-  		,div(class="busy",p(text),img(src=img))
+  		,div(class="shiny-busy",p(text),img(src=img))
   		,tags$script(sprintf(
   		"	setInterval(function(){
   		 	 if ($('html').hasClass('shiny-busy')) {
