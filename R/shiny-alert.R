@@ -33,5 +33,22 @@ shinyalert <- function(id, click.hide = TRUE, auto.close.after = NULL) {
 #' @export
 showshinyalert <- function(session, id, HTMLtext, styleclass = "success") {
     alert.css.style = paste("alert", styleclass, sep = "-")
-    session$sendCustomMessage("shinyalerthandler", list(id = id, HTMLtext = HTMLtext, alert.css.style = alert.css.style))
+    session$sendCustomMessage("shinyalerthandler", list(id = id, HTMLtext = HTMLtext, alert.css.style = alert.css.style, show=TRUE))
+}
+
+
+#' hideshinyalert
+#' 
+#' Used in server.R. Show an alert placed in ui.R with shinyalert
+#' 
+#' @param id Specifies the alert id that will be used to access the
+#'   
+#' @family ShinySky elements
+#'   
+#' @seealso shinyalert
+#' 
+#'   
+#' @export
+hideshinyalert <- function(session, id) {
+  session$sendCustomMessage("shinyalerthandler", list(id = id, show=FALSE))
 }

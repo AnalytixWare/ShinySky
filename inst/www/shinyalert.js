@@ -7,12 +7,20 @@
       classes.forEach(function(x) {
            el.removeClass(x)
       })
-
-      el.addClass(data["alert.css.style"])
-
-      el.addClass('in');
-      el.html(data.HTMLtext);
-      el.fadeIn();
+      
+      
+      if( data.show ){
+        el.addClass(data["alert.css.style"]);
+  
+        el.addClass('in');
+        el.html(data.HTMLtext);
+        el.fadeIn();
+      } else {
+        el.removeClass('in');
+        el.addClass('out');
+        el.removeClass('fade');
+        el.fadeOut();
+      }
 
       //console.log(Number(el.data("auto-close-after")) * 1000); 
 
