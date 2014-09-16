@@ -3,7 +3,7 @@
 \title{Action button}
 \usage{
 actionButton(inputId, label, styleclass = "", size = "", block = F,
-  icon = NULL, css.class = "", ...)
+  icon = NULL, icon.library = c("font awesome", "bootstrap"), css.class = "", ...)
 }
 \arguments{
   \item{inputId}{Specifies the input slot that will be used
@@ -22,9 +22,12 @@ actionButton(inputId, label, styleclass = "", size = "", block = F,
 
   \item{block}{Whehter the button should fill the block}
 
-  \item{icon}{Display an icon for the button
-  \url{http://getbootstrap.com/2.3.2/base-css.html#icons}}
-
+  \item{icon}{Display an icon for the button}
+  
+  \item{icon.library}{Choose the icon library to source the icon from
+  options are: \code{font awesome} (\url{http://www.fontawesome.io/icons/}) and
+  \code{bootstrap} (\url{http://getbootstrap.com/2.3.2/base-css.html#icons})}
+  
   \item{css.class}{Any additional CSS class one wishes to
   add to the action button}
 }

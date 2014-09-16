@@ -19,7 +19,7 @@ Used in server.R. Show an alert placed in ui.R with
 shinyalert
 }
 \seealso{
-shinyalert
+shinyalert hideshinyalert
 
 Other ShinySky.elements: \code{\link{actionButton}};
 \code{\link{select2Input}}; \code{\link{shinyalert}};
