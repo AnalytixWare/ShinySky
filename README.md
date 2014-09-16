@@ -155,7 +155,7 @@ install.packages(devtools)
 If you already have the `devtools` package installed, simply run
 
 ```s
-devtools::install_github("AnalytixWare/ShinySky")
+devtools::install_github("shinysky","analytixware")
 ```
 
 
