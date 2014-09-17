@@ -16,7 +16,7 @@ jstree.obj <- function (x, addDepthClass=TRUE, addIndex=TRUE, depth=0, index="1"
       depth=depth+1
       index = paste0(index, "_", ind)
       a <- tags$li(list(name, 
-                        myjstree.obj(theList[[ind]], 
+                        jstree.obj(theList[[ind]], 
                                      addDepthClass=addDepthClass,
                                      addIndex=addIndex,
                                      depth=depth,
