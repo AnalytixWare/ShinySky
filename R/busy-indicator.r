@@ -20,11 +20,11 @@ busyIndicator <- function(text = "Calculation in progress..",img = "shinysky/bus
   		 	 if ($('html').hasClass('shiny-busy')) {
   		    setTimeout(function() {
   		      if ($('html').hasClass('shiny-busy')) {
-  		        $('div.busy').show()
+  		        $('div.shiny-busy').show()
   		      }
   		    }, %d)  		    
   		  } else {
-  		    $('div.busy').hide()
+  		    $('div.shiny-busy').hide()
   		  }
   		},100)
   		",wait)
