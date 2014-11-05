@@ -104,7 +104,7 @@ shinyUI(basicPage(
     )
   )
   ,h4("Busy Indicator")
-  ,busyIndicator(wait = 0)
+  ,busyIndicator("Calculation In progress",wait = 0)
   ,actionButton("busyBtn","Show busyInidcator")
   ,plotOutput("plot1")
   )

@@ -12,19 +12,18 @@ busyIndicator <- function(text = "Calculation in progress..",img = "shinysky/bus
 	tagList(
   		singleton(tags$head(
     		tags$link(rel="stylesheet", type="text/css",href="shinysky/busyIndicator/busyIndicator.css")
-    		# ,tags$script(type="text/javascript", src = "busy.js")
   			))
-  		,div(class="shiny-busy",p(text),img(src=img))
+  		,div(class="shinysky-busy-indicator",p(text),img(src=img))
   		,tags$script(sprintf(
   		"	setInterval(function(){
   		 	 if ($('html').hasClass('shiny-busy')) {
   		    setTimeout(function() {
   		      if ($('html').hasClass('shiny-busy')) {
-  		        $('div.shiny-busy').show()
+  		        $('div.shinysky-busy-indicator').show()
   		      }
   		    }, %d)  		    
   		  } else {
-  		    $('div.shiny-busy').hide()
+  		    $('div.shinysky-busy-indicator').hide()
   		  }
   		},100)
   		",wait)
