@@ -3,7 +3,7 @@ ShinySky
 
 Various UI widgets/components used by AnalytixWare's flaghship product e.g. alerts, styled buttons
 
-![alt text](https://github.com/AnalytixWare/ShinySky/blob/master/screenshots/7.png?raw=true "Examples")
+![alt text](~/screenshots/7.png?raw=true "Examples")
 
 
 # Install
