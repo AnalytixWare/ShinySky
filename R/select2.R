@@ -52,8 +52,9 @@ select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("
 
 #' includeSelect2
 #' 
-#' Some code to include css and js for includeSelect2. This provide so that the
-#' use can have access to select2 even if they only use it in the dynamic UI
+#' Some code to include css and js for includeSelect2. This is provide so that 
+#' the user can have access to select2 even if they only use it in the dynamic 
+#' UI
 #' 
 #' @return the HTML to include the Javascripot and CSS of select2.js
 #' @export
