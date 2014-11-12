@@ -8,12 +8,11 @@ Various UI widgets/components used by AnalytixWare's flaghship product e.g. aler
 
 # Install
 ```s
-install.packages("devtools")#if not alrady installed
-devtools::install_github("ShinySky","AnalytixWare")
-require(shinysky)
+if (require(devtools)) install.packages("devtools")#if not alrady installed
+devtools::install_github("AnalytixWare/ShinySky")
+library(shinysky)
 shinysky::run.shinysky.example()
 ```
-
 
 # Usage
 
@@ -152,7 +151,7 @@ ShinySky is GitHub package and you need the `devtools` package to install it.
 ```s
 # installs the devtools package if not already installed
 if(require(devtools)) install.packages("devtools") 
-devtools::install_github("shinysky","analytixware")
+devtools::install_github("analytixware/shinysky")
 ```
 
 
