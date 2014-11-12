@@ -92,11 +92,11 @@
 	"buffers":
 	[
 		{
-			"file": "inst/www/shinysky/alert-handler.js",
+			"file": "R/select2.R",
 			"settings":
 			{
-				"buffer_size": 791,
-				"line_ending": "Windows"
+				"buffer_size": 3386,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -319,8 +319,18 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/zj/ShinySky/C:\\Users\\ZhuoJia\\Documents\\GitHub\\ShinySky",
+		"/Users/zj/ShinySky",
+		"/Users/zj/ShinySky/inst",
+		"/Users/zj/ShinySky/inst/examples",
+		"/Users/zj/ShinySky/inst/www",
+		"/Users/zj/ShinySky/R"
+	],
 	"file_history":
 	[
+		"/Users/zj/ShinySky/inst/www/shinysky/alert-handler.js",
 		"/C/Users/ZhuoJia/Documents/GitHub/ShinySky/inst/www/shared/shinysky/alert-handler.js",
 		"/C/Users/ZhuoJia/Desktop/Jonathan Creek - 3x01 - The Curious Tale of Mr. Spearfish.DVD.BDK.en-resync.srt",
 		"/C/Users/ZhuoJia/Desktop/Jonathan Creek - 3x01 - The Curious Tale of Mr. Spearfish.DVD.BDK.en-resync (1).srt",
@@ -447,8 +457,7 @@
 		"/C/temp/fn.txt",
 		"/C/Users/ZhuoJia/Documents/AnalytixWare/Project0/Shiny/shinyui/shinyui/shinyui.Rproj",
 		"/C/Users/ZhuoJia/Documents/AnalytixWare/Project0/Shiny/shinyui/shinyui/debug.log",
-		"/D/Dropbox/Dropbox/AnalytixWare/Consulting/shinywebapprefinement/www/shinyalert.js",
-		"/D/nihao.svg"
+		"/D/Dropbox/Dropbox/AnalytixWare/Consulting/shinywebapprefinement/www/shinyalert.js"
 	],
 	"find":
 	{
@@ -626,31 +635,30 @@
 			[
 				{
 					"buffer": 0,
-					"file": "inst/www/shinysky/alert-handler.js",
+					"file": "R/select2.R",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 791,
+						"buffer_size": 3386,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								786,
-								786
+								2339,
+								2339
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Enhanced-R/support/Enhanced-R.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 765.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -698,6 +706,10 @@
 	"output.MarGo-output":
 	{
 		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 135.0
 	},
 	"project": "shinysky.sublime-project",
 	"replace":
@@ -821,6 +833,7 @@
 		],
 		"width": 544.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},

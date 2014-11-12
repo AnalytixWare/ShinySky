@@ -1,11 +1,6 @@
 #' run.shinysky.example 
 #'
 #' @export
-run.shinysky.example <- function(example = c("0_all","1_buttons&alerts","2_select2","3_typeahead","4_busyIndicator","5_hotable","6_jstree","7_jscolor")) {
-	tryCatch({
-		example <- match.arg(example)
-		shiny::runApp(file.path(system.file("examples", package = "shinysky"),example), display.mode = "showcase")
-	}, error = function(e) {
-		print(paste0("Valid Examples are '", paste(dir(system.file("examples", package = "shinysky")),collapse="', '"),"'"))
-	})
+run.shinysky.example <- function() {
+		shiny::runApp(file.path(system.file("examples", package = "shinysky")), display.mode = "showcase")
 } 

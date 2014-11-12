@@ -3,6 +3,12 @@ require(shiny)
 require(shinysky)
 
 shinyServer(function(input, output, session) {
+    # jstree
+    observe({
+        showshinyalert(session, "alert_jstree1", paste0("You selected these items in the tree: ", 
+            paste0(input$jstree1, collapse = ", ")))
+    })
+    
     # actionButtons
     observe({
         if (input$id_blank == 0) 
@@ -75,5 +81,77 @@ shinyServer(function(input, output, session) {
                 styleclass = "info")
         }
         # updateSelectInput(session,'select2Input1',choices=c('a','b','c'),selected=c('c','b'))
+    })
+    
+    # typeahead
+    observe({
+        input$thti
+        showshinyalert(session, "shinyalert3", sprintf("Typeahead Text Input Value: '%s'", 
+            input$thti), "error")
+    })
+    
+    # select2
+    observe({
+        if (input$updateselect2 == 0) 
+            return()
+        
+        updateSelect2Input(session, "select2Input1", choices = c("d", "e", "f"), selected = c("f", 
+            "d"), label = "hello")
+        updateSelectInput(session, "select2Input2", choices = c("d", "e", "f"), selected = c("f", 
+            "d"), label = "hello")
+        updateSelectInput(session, "select2Input3", choices = c("d", "e", "f"), selected = "f", 
+            label = "hello")
+    })
+    
+    observe({
+        showshinyalert(session, "shinyalert4", paste(input$select2Input1, collapse = ","), 
+            "info")
+    })
+    
+    observe({
+        showshinyalert(session, "shinyalert5", paste(input$select2Input2, collapse = ","), 
+            "info")
+    })
+    
+    observe({
+        showshinyalert(session, "shinyalert6", paste(input$select2Input3, collapse = ","), 
+            "info")
+    })
+    
+    # busyIndicator
+    output$plot1 <- renderPlot({
+        if (input$busyBtn == 0) 
+            return()
+        Sys.sleep(3)
+        hist(rnorm(10^3))
+    })
+    
+    # typeahead
+    observe({
+        if (input$update_typeahead_btn == 0) {
+            return()
+        }
+        dataset <- data.frame(firstname = c("ZJ", "Mitchell"), lastname = c("Dai", "Joblin"))
+        valueKey <- "lastname"
+        tokens <- c("zd", "mj", dataset$firstname)
+        template <- HTML("First Name: <em>{{firstname}}</em> Last Name: <em>{{lastname}}</em>")
+        updateTextInput.typeahead(session, "thti", dataset, valueKey, tokens, template, 
+            placeholder = "type 'm' or 'z' to see the updated table")
+    })
+    
+    # hotable
+    output$hotable1 <- renderHotable({
+        head(iris)
+    }, readOnly = FALSE)
+    
+    observe({
+        df <- hot.to.df(input$hotable1)
+        print(head(df))
+    })
+
+    # jscolor
+    observe({
+        showshinyalert(session, "alert_jscolorInput1", paste0("You selected this color: ", 
+            input$jscolorInput1))
     })
 }) 

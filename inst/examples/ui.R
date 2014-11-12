@@ -6,10 +6,10 @@ nav = list(
   "Topleaf"
 )
 
-
-# Define UI for miles per gallon application
-shinyUI(basicPage(  
-  headerPanel("ShinySky Examples"),  br(), br(),
+shinyUI(basicPage(headerPanel("ShinySky Examples"),  br(),
+  tabsetPanel(selected = "Action Buttons",
+    tabPanel("Action Buttons",
+  
   div(class="row-fluid",h4("ActionButtons")),
   div(class="row-fluid",
   div(class="well container-fluid" , div(class="container span3",
@@ -30,8 +30,8 @@ shinyUI(basicPage(
         shinyalert("shinyalert1", FALSE,auto.close.after = 5)
     )
   )
-),
-  
+))
+  ,tabPanel("Select2",
   h4("Select2")
   ,div(class="row-fluid ",
   div(class="well container-fluid"   ,  
@@ -61,10 +61,10 @@ shinyUI(basicPage(
              ,helpText("Select2Input2")
              ,shinyalert("shinyalert6")
          ))
-  )
+  ))
       
-    ,br()
-  ,h4("Typeahead Text Input ")
+  ,tabPanel("Typeahead",
+  h4("Typeahead Text Input ")
   ,div(class="row-fluid ", div(class="well container-fluid",     div(class="container span3",
       helpText("Type 'name' or '2' to see the features. "),
        textInput.typeahead(
@@ -80,7 +80,9 @@ shinyUI(basicPage(
      div(class="container span9"
        ,shinyalert("shinyalert3")
      ))
-  )
+  ))
+
+,tabPanel("EventsButtons"
   ,h4("EventsButtons")
     ,div(class="row-fluid",
       div(class="container-fluid well",div(class="container span2",
@@ -89,12 +91,15 @@ shinyUI(basicPage(
             div(class="container span10",
               shinyalert("shinyalert2")
               ))
-      )
+      ))
+,tabPanel("Handsontable"
     ,h4("Handsontable Input/Output")
   ,div(class="well container-fluid"
     ,hotable("hotable1")
-  )
-   ,h4("Treeview (based on jstree)")
+  ))
+
+   ,tabPanel("Treeview",
+    h4("Treeview (based on jstree)")
   ,div(class="well container-fluid", 
     div(class="row-fluid", 
       div(class="span2",
@@ -102,10 +107,23 @@ shinyUI(basicPage(
       )
       ,div(class="span10", shinyalert("alert_jstree1"))
     )
-  )
-  ,h4("Busy Indicator")
+  ))
+  ,tabPanel("Busy Indicator",
+    h4("Busy Indicator")
   ,busyIndicator("Calculation In progress",wait = 0)
   ,actionButton("busyBtn","Show busyInidcator")
   ,plotOutput("plot1")
   )
+  ,tabPanel("jsColor",
+  h4("jscolor Picker (see www.jscolor.com)"), 
+    div(class = "well container-fluid", 
+      div(class = "row-fluid", 
+        div(class = "row-fluid", 
+            div(class = "span3", jscolorInput("jscolorInput1")), 
+            div(class = "span9", shinyalert("alert_jscolorInput1")
+            )
+          )
+      )
+   ))
+))
 )
