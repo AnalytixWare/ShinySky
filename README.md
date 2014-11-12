@@ -147,14 +147,11 @@ shinysky::run.shinysky.example(n)
 
 
 # Install
-To istall a github package you need the `devtools` package installed.  If you do not have the `devtools` package installed, run this first
-```s
-install.packages(devtools)
-```
-
-If you already have the `devtools` package installed, simply run
+ShinySky is GitHub package and you need the `devtools` package to install it.  
 
 ```s
+# installs the devtools package if not already installed
+if(require(devtools)) install.packages("devtools") 
 devtools::install_github("shinysky","analytixware")
 ```
 
