@@ -19,7 +19,7 @@ shinyalert <- function(id, click.hide = TRUE, auto.close.after = NULL) {
 #' showshinyalert
 #' 
 #' Used in server.R. Show an alert placed in ui.R with shinyalert
-#' 
+#' @param session The Shiny sessoin specified in shinyServer(function(input, output, session) {...}). 
 #' @param id Specifies the alert id that will be used to access the
 #' @param HTMLtext The HTML you want displayed in the text
 #' @param styleclass The styling class of the alert--options are primary, info, 
@@ -40,7 +40,7 @@ showshinyalert <- function(session, id, HTMLtext, styleclass = "success") {
 #' hideshinyalert
 #' 
 #' Used in server.R. Show an alert placed in ui.R with shinyalert
-#' 
+#' @param session The Shiny sessoin specified in shinyServer(function(input, output, session) {...}). 
 #' @param id Specifies the alert id that will be used to access the
 #'   
 #' @family ShinySky elements

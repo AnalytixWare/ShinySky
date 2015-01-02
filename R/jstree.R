@@ -2,7 +2,7 @@
 #' 
 #' Creates a jstree object to be passed to jstree for creating a tree view
 #' 
-#' @param id The id used to refer to the jstree
+#' @param x The id used to refer to the jstree
 #' @param addDepthClass Add a class attribute "treedepth_n" to each node, where n is the tree depth (depth) of each node, starting with top depth = 1.  Useful with conditionalPanel, css and jQuery.
 #' @param addIndex Add an attrbute "index" to each node, a string containing the path from the top, in concatenated ind values. 
 #' @param depth The current tree depth for this node, to be passed into the recursive calls. Default = 0 (top depth). Not intended for the user; used only in the recursion.
@@ -48,7 +48,7 @@ jstree.obj <- function (x, addDepthClass=TRUE, addIndex=TRUE, depth=0, index="1"
 #' Creates a jstree
 #' 
 #' @param id The id used to refer to the jstree
-#'   
+#' @param tree.list The tree list create dusing jstree.obj 
 #' @export
 jstree <- function(id, tree.list) {
     tagList(        
