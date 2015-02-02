@@ -121,37 +121,3 @@ observe({
 })
 
 ```
-
-#jscolorInput
-##ui.R
-
-```s
-jscolorInput("jscolorInput1")
-```
-
-![alt text](https://github.com/AnalytixWare/ShinySky/blob/master/screenshots/jscolor.png?raw=true "jscolorInput")
-
-# Example
-
-```s
-shinysky::run.shinysky.example()
-```
-
-or to run individual examples. You can use for example
-
-```s
-n = "2"
-shinysky::run.shinysky.example(n)
-```
-
-
-# Install
-ShinySky is GitHub package and you need the `devtools` package to install it.  
-
-```s
-# installs the devtools package if not already installed
-if(require(devtools)) install.packages("devtools") 
-devtools::install_github("analytixware/shinysky")
-```
-
-
