@@ -1,10 +1,6 @@
 library(shiny)
 library(shinysky)
 
-nav = list(
-  "Branch"=list("twig"=list("leafOnTwigA","leafOnTwigB" ),"leafOnBranch"),
-  "Topleaf"
-)
 
 shinyUI(basicPage(headerPanel("ShinySky Examples"),  br(),
   tabsetPanel(selected = "Action Buttons",
@@ -98,16 +94,7 @@ shinyUI(basicPage(headerPanel("ShinySky Examples"),  br(),
     ,hotable("hotable1")
   ))
 
-   ,tabPanel("Treeview",
-    h4("Treeview (based on jstree)")
-  ,div(class="well container-fluid", 
-    div(class="row-fluid", 
-      div(class="span2",
-        jstree("jstree1",jstree.obj(nav))
-      )
-      ,div(class="span10", shinyalert("alert_jstree1"))
-    )
-  ))
+
   ,tabPanel("Busy Indicator",
     h4("Busy Indicator")
   ,busyIndicator("Calculation In progress",wait = 0)

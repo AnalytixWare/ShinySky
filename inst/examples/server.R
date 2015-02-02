@@ -3,11 +3,7 @@ require(shiny)
 require(shinysky)
 
 shinyServer(function(input, output, session) {
-    # jstree
-    observe({
-        showshinyalert(session, "alert_jstree1", paste0("You selected these items in the tree: ", 
-            paste0(input$jstree1, collapse = ", ")))
-    })
+ 
     
     # actionButtons
     observe({
@@ -149,9 +145,5 @@ shinyServer(function(input, output, session) {
         print(head(df))
     })
 
-    # jscolor
-    observe({
-        showshinyalert(session, "alert_jscolorInput1", paste0("You selected this color: ", 
-            input$jscolorInput1))
-    })
+   
 }) 
