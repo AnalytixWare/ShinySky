@@ -18,3 +18,5 @@ man/jstree.obj.Rd
 man/jstree.Rd
 
 R/jstree.R
+
+.RDataTmp
