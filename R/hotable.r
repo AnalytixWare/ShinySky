@@ -53,6 +53,9 @@ hotable <- function(id) {
 #' Renders the hotable.
 #' 
 #' @param expr The computation that leads to an output
+#' @param env The R environment in which to create the dataset
+#' @param quoted Pass to the exprToFunction
+#' @param options Pass to the exprToFunction
 #' @param readOnly A vector of TRUE/FALSE values to indicate which of the 
 #'   columns should be readonly.
 #'   

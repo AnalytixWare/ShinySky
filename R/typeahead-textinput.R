@@ -31,7 +31,12 @@ textInput.typeahead <- function(id,placeholder,local, valueKey, tokens,template,
   
 }
 
-#' update.textInput.typeahead
+#' updateTextInput.typeahead
+#' 
+#' Update textInput.typeahead
+#' @param session The Shiny sessoin specified in shinyServer(function(input, output, session) {...}).  
+#' @param dataset The data.frame to render
+#' @rdname textInput.typeahead
 #'
 #' @export
 updateTextInput.typeahead <- function(session,id, dataset, valueKey, tokens, template, limit = 20, placeholder = "") {    

@@ -19,6 +19,8 @@ wrap <- function(str,with = '"') {
 #'   order in which you specify the selection is not being taken into account,
 #'   however it's input parameters are compatible with selectInput and you can
 #'   use updateSelectInput to update its contents.
+#' @param drag.and.drop Allow drag and drop or not
+#' @param ... Other arguments to pass into shiny::selectInput
 #'   
 #' @return A select list control that can be added to a UI definition.#'
 #'   
@@ -56,6 +58,7 @@ select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("
 #' the user can have access to select2 even if they only use it in the dynamic 
 #' UI
 #' 
+#' @param drag.and.drop Allow drag and drop of elements
 #' @return the HTML to include the Javascripot and CSS of select2.js
 #' @export
 includeSelect2 <- function(drag.and.drop = FALSE) {

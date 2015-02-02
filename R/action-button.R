@@ -1,4 +1,4 @@
-#' Action button
+#' Buttons including Action Buttons and Event Buttons
 #' 
 #' Creates an action button whose value is initially zero, and increments by one
 #' each time it is pressed.
@@ -12,18 +12,19 @@
 #' @param size The size of the button--options are large, small, mini
 #' @param block Whehter the button should fill the block
 #' @param icon Display an icon for the button
-#' @param specify icon set to use
-#'   \url{http://www.fontawesome.io/icons} or
+#' @param icon.library Specify an icon set to use 
+#'   \url{http://www.fontawesome.io/icons} or 
 #'   \url{http://getbootstrap.com/2.3.2/base-css.html#icons}
 #' @param css.class Any additional CSS class one wishes to add to the action 
 #'   button
+#' @param ... Other argument to feed into shiny::actionButton
 #'   
 #' @family ShinySky elements
 #'   
 #'   
 #' @export
 actionButton <- function(inputId, label, styleclass = "", size = "", 
-    block = F, icon = NULL, icon.library = c("font awesome", "bootstrap"),  css.class = "", ...) {
+    block = F, icon = NULL, icon.library = c("bootstrap", "font awesome"),  css.class = "", ...) {
     if (styleclass %in% c("primary", "info", "success", "warning", 
         "danger", "inverse", "link")) {
         btn.css.class <- paste("btn", styleclass, sep = "-")
@@ -39,7 +40,7 @@ actionButton <- function(inputId, label, styleclass = "", size = "",
     
     if (!is.null(icon)) {
         if( !(icon.library[1] %in% c("font awesome", "bootstrap")) ){
-          icon.set = "font awesome"
+          icon.set = "bootstrap"
         }else{
           icon.set = icon.library[1]
         }

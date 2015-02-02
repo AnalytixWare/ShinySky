@@ -10,3 +10,11 @@
 .RData
 
 shinysky.sublime-workspace
+
+man/jscolorInput.Rd
+
+man/jstree.obj.Rd
+
+man/jstree.Rd
+
+R/jstree.R
