@@ -106,18 +106,3 @@ something <- reactive({
 	hot.to.df(input$hotable1) # this will convert your input into a data.frame
 })
 ```
-
-#jsTree
-###ui.R
-
-```s
-jstree("jstree1",with(tags,ul(li("empty_folder"),li("folder1",ul(li("file1"),li("file2"))))))
-```
-
-###server.R
-```s
-observe({
-	print(paste0(input$jstree1,collapse=", "))
-})
-
-```
