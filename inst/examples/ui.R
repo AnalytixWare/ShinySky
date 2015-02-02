@@ -101,16 +101,6 @@ shinyUI(basicPage(headerPanel("ShinySky Examples"),  br(),
   ,actionButton("busyBtn","Show busyInidcator")
   ,plotOutput("plot1")
   )
-  ,tabPanel("jsColor",
-  h4("jscolor Picker (see www.jscolor.com)"), 
-    div(class = "well container-fluid", 
-      div(class = "row-fluid", 
-        div(class = "row-fluid", 
-            div(class = "span3", jscolorInput("jscolorInput1")), 
-            div(class = "span9", shinyalert("alert_jscolorInput1")
-            )
-          )
-      )
-   ))
+
 ))
 )
