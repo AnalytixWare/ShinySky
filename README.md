@@ -17,17 +17,17 @@ shinysky::run.shinysky.example()
 # Usage
 
 ```s
-require(shinysky)
+library(shinysky)
 ```
 
-##Action Buttons
+## Action Buttons
 ```s
 actionButton(inputId, label, styleclass = yourStyle)
 ```
 
 Specify the style with the  styleclass argument. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
 
-##Alerts
+## Alerts
 
 ### ui.R
 ```s
@@ -46,18 +46,18 @@ showshinyalert(session,id,HTMLtext,styleclass)
 
 Put some valid HTML in HTMLtext. Here you can specify the style you want using the styleclass parameter. The possible styles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
 
-##Select2
+## Select2
 The below will create a multiple select2 with "a", "b", "c" as choices
 ```s
 select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("b","a"))
 ```
 
-###Video Demo
+### Video Demo
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=9T4F-j76Vf0
 " target="_blank"><img src="http://img.youtube.com/vi/9T4F-j76Vf0/0.jpg" 
 alt="Video Demo" width="240" height="180" border="10" /></a>
 
-##Typeahead Text Input
+## Typeahead Text Input
 ```s
 textInput.typeahead(
     id="thti"
@@ -69,8 +69,8 @@ textInput.typeahead(
   )
 ```
 
-##Busy Indicator
-###ui.R
+## Busy Indicator
+### ui.R
 
 ```s
 busyIndicator(wait = 1000)
@@ -78,7 +78,7 @@ busyIndicator(wait = 1000)
 
 Here the wait determines how long to wait before showing the buys indicator. The default is wait=1000, which is one second. This is to prevent short computation triggering the busyIndicator.
 
-##Events Buttons
+## Events Buttons
 
 ```s
 eventsButton(inputId, label, events = c("dblclick"))
@@ -86,8 +86,8 @@ eventsButton(inputId, label, events = c("dblclick"))
 
 This button will invalidate (dirty) upon the events. The event does not have to be a "click", in fact the default is dblclick. You can specify multiple events. For a list of event types See: http://api.jquery.com/category/events/mouse-events/
 
-#Handsontable Input/Output
-###ui.R
+# Handsontable Input/Output
+### ui.R
 
 ```s
 hotable("hotable1")
@@ -99,7 +99,7 @@ This will create a handsontable which you can output using
 output$hotable1 <- renderHotable({...})
 ```
 
-###server.R
+### server.R
 
 ```s
 something <- reactive({
