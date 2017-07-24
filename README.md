@@ -7,7 +7,7 @@ Various UI widgets/components used by AnalytixWare's flaghship product e.g. aler
 
 
 # Install
-```s
+```r
 if (require(devtools)) install.packages("devtools")#if not alrady installed
 devtools::install_github("AnalytixWare/ShinySky")
 library(shinysky)
@@ -16,12 +16,12 @@ shinysky::run.shinysky.example()
 
 # Usage
 
-```s
+```r
 library(shinysky)
 ```
 
 ## Action Buttons
-```s
+```r
 actionButton(inputId, label, styleclass = yourStyle)
 ```
 
@@ -30,7 +30,7 @@ Specify the style with the  styleclass argument. The possible styles are "primar
 ## Alerts
 
 ### ui.R
-```s
+```r
 shinyalert(id, click.hide = TRUE, auto.close.after = NULL)
 ```
 
@@ -40,7 +40,7 @@ The auto.close.after can take a number and will close the alert after this many 
 Simply provide an id. The alert will be hidden until you show it using _showshinyalert_ in server.R
 
 ### server.R
-```s
+```r
 showshinyalert(session,id,HTMLtext,styleclass)
 ```
 
@@ -48,7 +48,7 @@ Put some valid HTML in HTMLtext. Here you can specify the style you want using t
 
 ## Select2
 The below will create a multiple select2 with "a", "b", "c" as choices
-```s
+```r
 select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("b","a"))
 ```
 
@@ -58,7 +58,7 @@ select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b"
 alt="Video Demo" width="240" height="180" border="10" /></a>
 
 ## Typeahead Text Input
-```s
+```r
 textInput.typeahead(
     id="thti"
     ,placeholder="type 'name' or '2'"
@@ -72,7 +72,7 @@ textInput.typeahead(
 ## Busy Indicator
 ### ui.R
 
-```s
+```r
 busyIndicator(wait = 1000)
 ```
 
@@ -80,7 +80,7 @@ Here the wait determines how long to wait before showing the buys indicator. The
 
 ## Events Buttons
 
-```s
+```r
 eventsButton(inputId, label, events = c("dblclick"))
 ```
 
@@ -89,19 +89,19 @@ This button will invalidate (dirty) upon the events. The event does not have to 
 # Handsontable Input/Output
 ### ui.R
 
-```s
+```r
 hotable("hotable1")
 ```
 
 This will create a handsontable which you can output using 
 
-```s
+```r
 output$hotable1 <- renderHotable({...})
 ```
 
 ### server.R
 
-```s
+```r
 something <- reactive({
 	hot.to.df(input$hotable1) # this will convert your input into a data.frame
 })
