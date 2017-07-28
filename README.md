@@ -8,7 +8,7 @@ Various UI widgets/components used by AnalytixWare's flaghship product e.g. aler
 
 # Install
 ```r
-if (require(devtools)) install.packages("devtools")#if not alrady installed
+if (require(devtools)) install.packages("devtools")#if not already installed
 devtools::install_github("AnalytixWare/ShinySky")
 library(shinysky)
 shinysky::run.shinysky.example()
