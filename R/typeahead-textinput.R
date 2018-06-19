@@ -26,7 +26,7 @@ textInput.typeahead <- function(id,placeholder,local, valueKey, tokens,template,
     , singleton(tags$head(tags$script(src = "shinysky/typeahead/textInput-typeahead.js")))
     , singleton(tags$head(tags$link(rel="stylesheet",href="shinysky/typeahead/example.css")))
     , HTML(sprintf('<input data-name="%s" type="text" value="" class="input typeahead" placeholder="%s" autocomplete="off" spellcheck="false" style="margin: 0 auto;"/>',id,placeholder))
-    , tags$script(HTML(sprintf('update_typeahead("%s",%s,"%s",%s,"%s",%s)',id,toJSON(local),valueKey,toJSON(as.character(tokens)),HTML(template),limit)))
+    , tags$script(shiny::HTML(sprintf('update_typeahead("%s",%s,"%s",%s,"%s",%s)',id, RJSONIO::toJSON(local),valueKey, RJSONIO::toJSON(as.character(tokens)),shiny::HTML(template),limit)))
     )
   
 }
