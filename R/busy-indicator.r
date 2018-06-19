@@ -9,12 +9,12 @@
 #'   
 #' @export
 busyIndicator <- function(text = "Calculation in progress..",img = "shinysky/busyIndicator/ajaxloaderq.gif", wait=1000) {
-	tagList(
-  		singleton(tags$head(
-    		tags$link(rel="stylesheet", type="text/css",href="shinysky/busyIndicator/busyIndicator.css")
+	shiny::tagList(
+  		shiny::singleton(shiny::tags$head(
+  		  shiny::tags$link(rel="stylesheet", type="text/css",href="shinysky/busyIndicator/busyIndicator.css")
   			))
-  		,div(class="shinysky-busy-indicator",p(text),img(src=img))
-  		,tags$script(sprintf(
+  		,shiny::div(class="shinysky-busy-indicator",p(text),img(src=img))
+  		,shiny::tags$script(sprintf(
   		"	setInterval(function(){
   		 	 if ($('html').hasClass('shiny-busy')) {
   		    setTimeout(function() {

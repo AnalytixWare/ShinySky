@@ -6,21 +6,21 @@ shinyUI(basicPage(headerPanel("ShinySky Examples"),  br(),
   tabsetPanel(selected = "Action Buttons",
     tabPanel("Action Buttons",
   
-  div(class="row-fluid",h4("ActionButtons")),
+  div(class="row-fluid",h4("actionButtons")),
   div(class="row-fluid",
   div(class="well container-fluid" , div(class="container span3",
-        actionButton("id_blank","blank",size="large"),
-        actionButton("id_primary","primary",styleclass="primary",size="mini"),
-        actionButton("id_info","info",styleclass="info",size="small"),
-        actionButton("id_success","success",styleclass="success",icon = "ok"),
-        actionButton("id_warning","warning",styleclass="warning",icon="plus"),
-        actionButton("id_danger","danger",styleclass="danger"),
-        actionButton("id_inverse","inverse",styleclass="inverse"),
-        actionButton("id_link","link",styleclass="link")    
+        shinysky::actionButton("id_blank","blank",size="large"),
+        shinysky::actionButton("id_primary","primary",styleclass="primary",size="mini"),
+        shinysky::actionButton("id_info","info",styleclass="info",size="small"),
+        shinysky::actionButton("id_success","success",styleclass="success",icon = "ok"),
+        shinysky::actionButton("id_warning","warning",styleclass="warning",icon="plus"),
+        shinysky::actionButton("id_danger","danger",styleclass="danger"),
+        shinysky::actionButton("id_inverse","inverse",styleclass="inverse"),
+        shinysky::actionButton("id_link","link",styleclass="link")    
         ),
        div(class=" span3","Buttons that fill a block",
-         actionButton("id_inverse2","inverse2",styleclass="inverse",block=T),
-         actionButton("id_warning2","warning2",styleclass="warning",block=T)),
+         shinysky::actionButton("id_inverse2","inverse2",styleclass="inverse",block=T),
+         shinysky::actionButton("id_warning2","warning2",styleclass="warning",block=T)),
       div(class="container-fluid span6", 
         shiny::helpText("Click any button to show an alert. The alert will automatically close after 5 seconds"),
         shinyalert("shinyalert1", FALSE,auto.close.after = 5)
@@ -38,7 +38,7 @@ shinyUI(basicPage(headerPanel("ShinySky Examples"),  br(),
          ),
          div(class="container span3"
              ,helpText("Select2Input")
-             ,actionButton("updateselect2","Update")
+             ,shinysky::actionButton("updateselect2","Update")
              ,shinyalert("shinyalert4")
          ),
          div(class="container span3",
@@ -71,7 +71,7 @@ shinyUI(basicPage(headerPanel("ShinySky Examples"),  br(),
         ,tokens=c(1,2)
         ,template = HTML("<p class='repo-language'>{{info}}</p> <p class='repo-name'>{{name}}</p> <p class='repo-description'>You need to learn more CSS to customize this further</p>")
       ),
-      actionButton("update_typeahead_btn","Update Typeahead", styleclass= "primary")
+      shinysky::actionButton("update_typeahead_btn","Update Typeahead", styleclass= "primary")
      ),
      div(class="container span9"
        ,shinyalert("shinyalert3")
@@ -98,7 +98,7 @@ shinyUI(basicPage(headerPanel("ShinySky Examples"),  br(),
   ,tabPanel("Busy Indicator",
     h4("Busy Indicator")
   ,busyIndicator("Calculation In progress",wait = 0)
-  ,actionButton("busyBtn","Show busyInidcator")
+  ,shinysky::actionButton("busyBtn","Show busyInidcator")
   ,plotOutput("plot1")
   )
 

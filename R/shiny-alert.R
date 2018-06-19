@@ -12,8 +12,8 @@
 #'   
 #' @export
 shinyalert <- function(id, click.hide = TRUE, auto.close.after = NULL) {
-    tagList(singleton(tags$head(tags$script(src = "shinysky/shinyalert.js"))), 
-        HTML(paste0("<div id=\"", id, "\" class=\"shinyalert alert fade\" data-alert=\"alert\" click-hide=\"",as.character(click.hide),"\" data-auto-close-after ='",auto.close.after,"'></div>")))
+    shiny::tagList(singleton(tags$head(tags$script(src = "shinysky/shinyalert.js"))), 
+        shiny::HTML(paste0("<div id=\"", id, "\" class=\"shinyalert alert fade\" data-alert=\"alert\" click-hide=\"",as.character(click.hide),"\" data-auto-close-after ='",auto.close.after,"'></div>")))
 }
 
 #' showshinyalert
