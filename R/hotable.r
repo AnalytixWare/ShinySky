@@ -39,11 +39,11 @@ hot.to.df <- function(b) {
 #'   
 #' @export
 hotable <- function(id) {
-    tagList(        
-        singleton(tags$head(tags$link(href = "shinysky/handsontable/0.10.3/jquery.handsontable.full.css", rel = "stylesheet"))),
-        singleton(tags$head(tags$script(src = "shinysky/handsontable/0.10.3/jquery.handsontable.full.js"))),
-        singleton(tags$head(tags$script(src = "shinysky/hotable.js"))),
-        div(id = id, class = "hotable")
+    shiny::tagList(        
+        shiny::singleton(shiny::tags$head(shiny::tags$link(href = "shinysky/handsontable/0.10.3/jquery.handsontable.full.css", rel = "stylesheet"))),
+        shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/handsontable/0.10.3/jquery.handsontable.full.js"))),
+        shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/hotable.js"))),
+        shiny::div(id = id, class = "hotable")
         )
     
 }
@@ -82,7 +82,7 @@ renderHotable <- function(expr, env = parent.frame(), quoted = FALSE,
 
         readOnly <- rep(readOnly,length.out = l)
 
-        for (i in 1:l) {
+        for (i in seq_len(l)) {
             if (i == 1) {
                 columns[[i]] <- list(readOnly = readOnly[i])
             } else if (types[i] == "double") {

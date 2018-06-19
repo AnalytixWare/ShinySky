@@ -20,13 +20,13 @@
 #' @family ShinySky elements
 #' @export
 textInput.typeahead <- function(id,placeholder,local, valueKey, tokens,template,limit = 20) {
-  tagList(
-      singleton(tags$head(tags$script(src = "shinysky/typeahead/typeahead.min.js")))
-    , singleton(tags$head(tags$script(src = "shinysky/typeahead/hogan.js")))
-    , singleton(tags$head(tags$script(src = "shinysky/typeahead/textInput-typeahead.js")))
-    , singleton(tags$head(tags$link(rel="stylesheet",href="shinysky/typeahead/example.css")))
-    , HTML(sprintf('<input data-name="%s" type="text" value="" class="input typeahead" placeholder="%s" autocomplete="off" spellcheck="false" style="margin: 0 auto;"/>',id,placeholder))
-    , tags$script(shiny::HTML(sprintf('update_typeahead("%s",%s,"%s",%s,"%s",%s)',id, RJSONIO::toJSON(local),valueKey, RJSONIO::toJSON(as.character(tokens)),shiny::HTML(template),limit)))
+  shiny::tagList(
+      shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/typeahead/typeahead.min.js")))
+    , shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/typeahead/hogan.js")))
+    , shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/typeahead/textInput-typeahead.js")))
+    , shiny::singleton(shiny::tags$head(shiny::tags$link(rel="stylesheet",href="shinysky/typeahead/example.css")))
+    , shiny::HTML(sprintf('<input data-name="%s" type="text" value="" class="input typeahead" placeholder="%s" autocomplete="off" spellcheck="false" style="margin: 0 auto;"/>',id,placeholder))
+    , shiny::tags$script(shiny::HTML(sprintf('update_typeahead("%s",%s,"%s",%s,"%s",%s)',id, RJSONIO::toJSON(local),valueKey, RJSONIO::toJSON(as.character(tokens)),shiny::HTML(template),limit)))
     )
   
 }
