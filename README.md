@@ -1,3 +1,8 @@
+This is no longer maintained!
+========
+
+Apologies, I haven't touched serious Shiny development for a while and there are so many great Shiny packages out there now! Hopefully, this package was the spark that ignited a forest!
+
 ShinySky
 ========
 
