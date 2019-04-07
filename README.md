@@ -3,6 +3,12 @@ This is no longer maintained!
 
 Apologies, I haven't touched serious Shiny development for a while and there are so many great Shiny packages out there now! Hopefully, this package was the spark that ignited a forest!
 
+Do you need help with Shiny?
+========
+[![Contact me on Codementor](https://cdn.codementor.io/badges/contact_me_github.svg)](https://www.codementor.io/zhuojiadai?utm_source=github&utm_medium=button&utm_term=zhuojiadai&utm_campaign=github)
+
+I am available for Shiny consulting! [Email me](mailto:dzj@analytixware.com) to get 10% discount off the hourly rate.
+
 ShinySky
 ========
 
