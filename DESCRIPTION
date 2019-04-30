@@ -7,7 +7,7 @@ Author: AnalytixWare
 Maintainer: ZJ <dzj@analytixware.com>
 Description: A set of Shiny UI components includings alerts and styled buttons
 License: MIT + file LICENSE
-Depends:
+Imports:
     shiny,
     RJSONIO,
     plyr
