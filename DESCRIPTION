@@ -1,12 +1,12 @@
 Type: Package
 Package: shinysky
-Title: A Set of Shiny UI Components and Widgets
+Title: A Set of Shiny Components and Widgets
 Version: 0.1.3
 Date: 2019-08-22
 Authors@R: person("Dai", "ZJ", email = "zhuojia.dai@gmail.com",
   role = c("aut", "cre"))
 Maintainer: Dai ZJ <zhuojia.dai@gmail.com>
-Description: A set of Shiny UI components including alerts and styled buttons. It has action buttons, textInput and other components.
+Description: A set of Shiny UI components including alerts, styled buttons, text input complements that autocompletes, and other components.
 License: MIT + file LICENSE
 Depends:
     shiny
