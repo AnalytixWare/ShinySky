@@ -10,7 +10,7 @@
 #' @param styleclass The Bootstrap styling class of the button--options are 
 #'   primary, info, success, warning, danger, inverse, link or blank
 #' @param size The size of the button--options are large, small, mini
-#' @param block Whehter the button should fill the block
+#' @param block Whether the button should fill the block
 #' @param icon Display an icon for the button
 #' @param icon.library Specify an icon set to use 
 #'   \url{http://www.fontawesome.io/icons} or 
@@ -20,7 +20,14 @@
 #' @param ... Other argument to feed into shiny::actionButton
 #'   
 #' @family ShinySky elements
-#'   
+#' 
+#' @examples 
+#' 
+#' # use it in place of shiny::actionButton
+#' # the possible sytles are "primary", "info", "success", "warning", "danger", "inverse", "link", "" 
+#' yourStyle = "info"
+#' actionButton("inputId", "label", styleclass = yourStyle)
+#' 
 #'   
 #' @export
 actionButton <- function(inputId, label, styleclass = "", size = "", 

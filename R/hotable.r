@@ -3,13 +3,14 @@
 #' Converts the table data passed from the client-side into a data.frame
 #' 
 #' @param b The input$hotable_id value.
-#'   
+#' @importFrom plyr ldply
 #' @export
 hot.to.df <- function(b) {
     # if theres is no data
-    if (length(b$data) == 0) 
-        return() 
-    
+    if (length(b$data) == 0) {
+        return()
+    }
+        
     col.names <- unlist(b$colHeaders)
     
     i = 0
@@ -25,7 +26,7 @@ hot.to.df <- function(b) {
         xx
     }
     
-    bb <- ldply(b$data, f)
+    bb <- plyr::ldply(b$data, f)
     colnames(bb) <- col.names
     bb
 }
@@ -36,16 +37,15 @@ hot.to.df <- function(b) {
 #' Creates a hotable (handsontable)
 #' 
 #' @param id The id used to refer to the table input$id or output$id
-#'   
+#' @importFrom shiny tagList singleton tags div
 #' @export
 hotable <- function(id) {
-    tagList(        
-        singleton(tags$head(tags$link(href = "shinysky/handsontable/0.10.3/jquery.handsontable.full.css", rel = "stylesheet"))),
-        singleton(tags$head(tags$script(src = "shinysky/handsontable/0.10.3/jquery.handsontable.full.js"))),
-        singleton(tags$head(tags$script(src = "shinysky/hotable.js"))),
-        div(id = id, class = "hotable")
+    shiny::tagList(        
+        shiny::singleton(shiny::tags$head(shiny::tags$link(href = "shinysky/handsontable/0.10.3/jquery.handsontable.full.css", rel = "stylesheet"))),
+        shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/handsontable/0.10.3/jquery.handsontable.full.js"))),
+        shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/hotable.js"))),
+        shiny::div(id = id, class = "hotable")
         )
-    
 }
 
 #' renderHotable
@@ -57,8 +57,24 @@ hotable <- function(id) {
 #' @param quoted Pass to the exprToFunction
 #' @param options Pass to the exprToFunction
 #' @param readOnly A vector of TRUE/FALSE values to indicate which of the 
-#'   columns should be readonly.
-#'   
+#'   columns should be read-only.
+#' 
+#' @examples 
+#' 
+#' \dontrun{
+#' # these example will only run inside a shiny app
+#' 
+#' ### ui.R
+#' #' hotable("hotable1")
+#' #This will create a handsontable which you can output using 
+#' output$hotable1 <- renderHotable({...})
+#' 
+#' ### server.R
+#' something <- reactive({
+#'     hot.to.df(input$hotable1) # this will convert your input into a data.frame
+#' })
+#' }
+#' 
 #' @export
 renderHotable <- function(expr, env = parent.frame(), quoted = FALSE, 
     options = NULL, readOnly = TRUE) {

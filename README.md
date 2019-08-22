@@ -1,18 +1,6 @@
-This is no longer maintained!
-========
+# ShinySky
 
-Apologies, I haven't touched serious Shiny development for a while and there are so many great Shiny packages out there now! Hopefully, this package was the spark that ignited a forest!
-
-Do you need help with Shiny?
-========
-[![Contact me on Codementor](https://cdn.codementor.io/badges/contact_me_github.svg)](https://www.codementor.io/zhuojiadai?utm_source=github&utm_medium=button&utm_term=zhuojiadai&utm_campaign=github)
-
-I am available for Shiny consulting! [Email me](mailto:dzj@analytixware.com) to get 10% discount off the hourly rate.
-
-ShinySky
-========
-
-Various UI widgets/components used by AnalytixWare's flaghship product e.g. alerts, styled buttons
+Various UI widgets/components used by AnalytixWare's flagship product e.g. alerts, styled buttons
 
 ![alt text](/screenshots/7.png?raw=true "Examples")
 
@@ -45,10 +33,10 @@ Specify the style with the  styleclass argument. The possible styles are "primar
 shinyalert(id, click.hide = TRUE, auto.close.after = NULL)
 ```
 
-In the past clicking on the alert will hide it. Setting click.hide = FALSE can prevent this behaviour
-The auto.close.after can take a number and will close the alert after this many seconds.
+In the past clicking on the alert will hide it. Setting `click.hide = FALSE` can prevent this behaviour
+The `auto.close.after` can take a number and will close the alert after this many seconds.
 
-Simply provide an id. The alert will be hidden until you show it using _showshinyalert_ in server.R
+Simply provide an id. The alert will be hidden until you show it using `showshinyalert` in server.R
 
 ### server.R
 ```r
@@ -117,3 +105,9 @@ something <- reactive({
 	hot.to.df(input$hotable1) # this will convert your input into a data.frame
 })
 ```
+
+# Do you need help with Shiny?
+[![Contact me on Codementor](https://cdn.codementor.io/badges/contact_me_github.svg)](https://www.codementor.io/zhuojiadai?utm_source=github&utm_medium=button&utm_term=zhuojiadai&utm_campaign=github)
+
+I am available for Shiny consulting! [Email me](mailto:dzj@analytixware.com) to get 10% discount off the hourly rate.
+
