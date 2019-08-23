@@ -6,9 +6,21 @@ Various UI widgets/components used by AnalytixWare's flagship product e.g. alert
 
 
 # Install
+To install the CRAN version
+```r
+# when on CRAN
+install.package("shinysky")
+```
+
+to install the latest version
 ```r
 if (require(devtools)) install.packages("devtools")#if not already installed
 devtools::install_github("AnalytixWare/ShinySky")
+```
+
+# Quick Start
+Simply the run the examples and take a look at the code included inside the example Shiny app
+```r
 library(shinysky)
 shinysky::run.shinysky.example()
 ```
