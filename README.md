@@ -83,7 +83,7 @@ Here the wait determines how long to wait before showing the buys indicator. The
 eventsButton(inputId, label, events = c("dblclick"))
 ```
 
-This button will invalidate (dirty) upon the events. The event does not have to be a "click", in fact the default is dblclick. You can specify multiple events. For a list of event types See: http://api.jquery.com/category/events/mouse-events/
+This button will invalidate (become dirty) upon the events. The event does not have to be a "click", in fact the default is dblclick. You can specify multiple events. For a list of event types See: http://api.jquery.com/category/events/mouse-events/
 
 # Handsontable Input/Output
 ### ui.R
@@ -110,4 +110,3 @@ something <- reactive({
 [![Contact me on Codementor](https://cdn.codementor.io/badges/contact_me_github.svg)](https://www.codementor.io/evalparse)
 
 I am available for Shiny consulting! [Email me](mailto:dzj@analytixware.com) to get 10% discount off the hourly rate.
-
