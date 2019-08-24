@@ -3,10 +3,15 @@
 #' A busy indicator
 #' 
 #' @param text The text to show
-#' @param img An anitmated gif
+#' @param img An animated gif
 #' @param wait The amount of time to wait before showing the busy indicator. The
 #'   default is 1000 which is 1 second.
-#'   
+#'
+#' @examples
+#' # add the following to the ui.R
+#' # this will show a one second busy indicator
+#' busyIndicator(wait = 1000)
+#' 
 #' @export
 busyIndicator <- function(text = "Calculation in progress..",img = "shinysky/busyIndicator/ajaxloaderq.gif", wait=1000) {
 	shiny::tagList(

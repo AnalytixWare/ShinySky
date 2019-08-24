@@ -4,12 +4,12 @@
 #' 
 #' @param id The id of the field
 #' @param placeholder The placeholder text. It is shown in the text input before
-#'   any input has occured
+#'   any input has occurred
 #' @param local A data.frame containing all the information you want to make 
 #'   available to typeahead to display in the dropdown. You can use any of the 
 #'   variable in the dataset via the template argument
 #' @param tokens A list whose length equal to nrow(local) where each element is 
-#'   array of string tokens. Typing the tokens will select the correponding rows
+#'   array of string tokens. Typing the tokens will select the corresponding rows
 #' @param valueKey The element that acts as the value key in the dataset usually
 #'   an unique identifier of the row
 #' @param limit An integer of the upper limit on how many hits to show in the 
@@ -18,15 +18,36 @@
 #'   {{name}} </p>' where name is one of the variables in local
 #'   
 #' @family ShinySky elements
+#' @importFrom RJSONIO toJSON
+#' @examples 
+#' 
+#' # ui.R
+#' textInput.typeahead(
+#' id="thti"
+#' ,placeholder="type 'name' or '2'"
+#' ,local=data.frame(name=c("name1","name2"),info=c("info1","info2"))
+#' ,valueKey = "name"
+#' ,tokens=c(1,2)
+#' ,template = HTML("<p class='repo-language'>{{info}}</p> 
+#' <p class='repo-name'>{{name}}</p> 
+#' <p class='repo-description'>You need to learn more CSS to customize this further</p>")
+#' )
+#' 
+#' # run the below and go to the typeahead tab
+#' if(interactive()) {
+#'   shinysky::run.shinysky.example()
+#' }
+#' 
+#' 
 #' @export
 textInput.typeahead <- function(id,placeholder,local, valueKey, tokens,template,limit = 20) {
   shiny::tagList(
-      shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/typeahead/typeahead.min.js")))
+    shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/typeahead/typeahead.min.js")))
     , shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/typeahead/hogan.js")))
     , shiny::singleton(shiny::tags$head(shiny::tags$script(src = "shinysky/typeahead/textInput-typeahead.js")))
-    , shiny::singleton(shiny::tags$head(shiny::tags$link(rel="stylesheet",href="shinysky/typeahead/example.css")))
+    , shiny::singleton(shiny::tags$head(tags$link(rel="stylesheet",href="shinysky/typeahead/example.css")))
     , shiny::HTML(sprintf('<input data-name="%s" type="text" value="" class="input typeahead" placeholder="%s" autocomplete="off" spellcheck="false" style="margin: 0 auto;"/>',id,placeholder))
-    , shiny::tags$script(shiny::HTML(sprintf('update_typeahead("%s",%s,"%s",%s,"%s",%s)',id, RJSONIO::toJSON(local),valueKey, RJSONIO::toJSON(as.character(tokens)),shiny::HTML(template),limit)))
+    , shiny::tags$script(HTML(sprintf('update_typeahead("%s",%s,"%s",%s,"%s",%s)',id,RJSONIO::toJSON(local),valueKey,RJSONIO::toJSON(as.character(tokens)),shiny::HTML(template),limit)))
     )
   
 }
@@ -34,7 +55,7 @@ textInput.typeahead <- function(id,placeholder,local, valueKey, tokens,template,
 #' updateTextInput.typeahead
 #' 
 #' Update textInput.typeahead
-#' @param session The Shiny sessoin specified in shinyServer(function(input, output, session) {...}).  
+#' @param session The Shiny session specified in shinyServer(function(input, output, session) {...}).  
 #' @param dataset The data.frame to render
 #' @rdname textInput.typeahead
 #'

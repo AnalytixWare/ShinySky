@@ -25,7 +25,15 @@ wrap <- function(str,with = '"') {
 #' @return A select list control that can be added to a UI definition.#'
 #'   
 #' @family ShinySky elements
-#'   
+#' 
+#' @examples 
+#' 
+#' ## ui.r
+#' select2Input("select2Input1",
+#'   "This is a multiple select2Input",
+#'    choices=c("a","b","c"),
+#'    selected=c("b","a"))
+#' 
 #' @export
 select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("input","select"),drag.and.drop = FALSE,...) {
  	type <- match.arg(type)
@@ -58,8 +66,8 @@ select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("
 #' the user can have access to select2 even if they only use it in the dynamic 
 #' UI
 #' 
-#' @param drag.and.drop Allow drag and drop of elements
-#' @return the HTML to include the Javascripot and CSS of select2.js
+#' @return `includeSelect2` returns the HTML to include the Javascripot and CSS of select2.js
+#' @rdname select2Input
 #' @export
 includeSelect2 <- function(drag.and.drop = FALSE) {
   shiny::tagList(
@@ -74,12 +82,8 @@ includeSelect2 <- function(drag.and.drop = FALSE) {
 #' 
 #' Update select2Input
 #' 
-#' @param session The session
-#' @param inputId The id of the component
-#' @param label The text label
-#' @param choices The possible choices
-#' @param selected The selected.
-#'   
+#' @param session The Shiny session
+#' @rdname select2Input
 #' @export
 updateSelect2Input <- function(session ,inputId,label,choices = NULL,selected = NULL) {
 	session$sendCustomMessage(type = "updateShinySkySelect2", list(id=inputId,choices =choices,selected =selected,label=label))

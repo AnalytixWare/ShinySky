@@ -1,2 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+rtd$
+screenshots$
+shinysky.sublime-project$
+^cran-comments\.md$
+^CRAN-RELEASE$

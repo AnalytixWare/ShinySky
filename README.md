@@ -1,15 +1,26 @@
-ShinySky
-========
+# ShinySky
 
-Various UI widgets/components used by AnalytixWare's flaghship product e.g. alerts, styled buttons
+Various UI widgets/components used by AnalytixWare's flagship product e.g. alerts, styled buttons
 
 ![alt text](/screenshots/7.png?raw=true "Examples")
 
 
 # Install
+To install the CRAN version
+```r
+# when on CRAN
+install.package("shinysky")
+```
+
+to install the latest version
 ```r
 if (require(devtools)) install.packages("devtools")#if not already installed
 devtools::install_github("AnalytixWare/ShinySky")
+```
+
+# Quick Start
+Simply the run the examples and take a look at the code included inside the example Shiny app
+```r
 library(shinysky)
 shinysky::run.shinysky.example()
 ```
@@ -34,10 +45,10 @@ Specify the style with the  styleclass argument. The possible styles are "primar
 shinyalert(id, click.hide = TRUE, auto.close.after = NULL)
 ```
 
-In the past clicking on the alert will hide it. Setting click.hide = FALSE can prevent this behaviour
-The auto.close.after can take a number and will close the alert after this many seconds.
+In the past clicking on the alert will hide it. Setting `click.hide = FALSE` can prevent this behaviour
+The `auto.close.after` can take a number and will close the alert after this many seconds.
 
-Simply provide an id. The alert will be hidden until you show it using _showshinyalert_ in server.R
+Simply provide an id. The alert will be hidden until you show it using `showshinyalert` in server.R
 
 ### server.R
 ```r
@@ -84,7 +95,7 @@ Here the wait determines how long to wait before showing the buys indicator. The
 eventsButton(inputId, label, events = c("dblclick"))
 ```
 
-This button will invalidate (dirty) upon the events. The event does not have to be a "click", in fact the default is dblclick. You can specify multiple events. For a list of event types See: http://api.jquery.com/category/events/mouse-events/
+This button will invalidate (become dirty) upon the events. The event does not have to be a "click", in fact the default is dblclick. You can specify multiple events. For a list of event types See: http://api.jquery.com/category/events/mouse-events/
 
 # Handsontable Input/Output
 ### ui.R
@@ -106,3 +117,8 @@ something <- reactive({
 	hot.to.df(input$hotable1) # this will convert your input into a data.frame
 })
 ```
+
+# Do you need help with Shiny?
+[![Contact me on Codementor](https://cdn.codementor.io/badges/contact_me_github.svg)](https://www.codementor.io/evalparse)
+
+I am available for Shiny consulting! [Email me](mailto:dzj@analytixware.com) to get 10% discount off the hourly rate.

@@ -6,6 +6,14 @@
 #' @param events A sequence of events that will invalidate the button
 #'   \url{http://getbootstrap.com/2.3.2/base-css.html#icons}
 #' @rdname actionButton
+#' 
+#' @examples 
+#' 
+#' # simply use this in place of a actionButtion
+#' # change the event to "hover" "mousedown" etc
+#' # see full list https://api.jquery.com/category/events/mouse-events/
+#' eventsButton("inputId", "label", events = c("dblclick"))
+#' 
 #' @export
 eventsButton <- function(..., events = c("dblclick")) {
     
