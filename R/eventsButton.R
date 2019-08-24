@@ -20,6 +20,6 @@ eventsButton <- function(..., events = c("dblclick")) {
     b <- actionButton(..., css.class = "shinysky-eventinput", 
         `data-shinysky-event-count` = 0, `data-shinysky-last-event` = "", 
         `data-shinysky-monitored-events` = paste(events, collapse = " "))
-    return(tagList(singleton(tags$script(src = "shinysky/event-input.js")), 
+    return(shiny::tagList(shiny::singleton(shiny::tags$script(src = "shinysky/event-input.js")), 
         b))
 } 

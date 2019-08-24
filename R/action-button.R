@@ -54,10 +54,10 @@ actionButton <- function(inputId, label, styleclass = "", size = "",
         set = switch(icon.set,
                      "font awesome" = "fa fa-",
                      "bootstrap" = "icon-")
-        icon.code <- HTML(paste0("<i class='", set, icon, "'></i>"))
+        icon.code <- shiny::HTML(paste0("<i class='", set, icon, "'></i>"))
     } else icon.code = ""
     
-    tags$button(id = inputId, type = "button", class = paste("btn action-button", 
+    shiny::tags$button(id = inputId, type = "button", class = paste("btn action-button", 
         btn.css.class, btn.size.class, btn.block, css.class, collapse = " "), 
         icon.code, label, ...)
 } 
