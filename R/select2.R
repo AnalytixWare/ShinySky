@@ -25,18 +25,26 @@ wrap <- function(str,with = '"') {
 #' @return A select list control that can be added to a UI definition.#'
 #'   
 #' @family ShinySky elements
-#'   
+#' 
+#' @examples 
+#' 
+#' ## ui.r
+#' select2Input("select2Input1",
+#'   "This is a multiple select2Input",
+#'    choices=c("a","b","c"),
+#'    selected=c("b","a"))
+#' 
 #' @export
 select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("input","select"),drag.and.drop = FALSE,...) {
  	type <- match.arg(type)
   	tags.choices <- wrap(paste0(choices,collapse='","'))
   	if (type == "input") {
-	    tagList(
+	    shiny::tagList(
 	    	includeSelect2(),
-	    	tags$p(label),
-	      	tags$input(id = inputId,value=paste0(selected,collapse=","),class="shinysky-select2Input",...),
-	      	tags$script(sprintf("$(function() { $('#%s').select2({width:'resolve',tags:[%s]})})",inputId,tags.choices)),
-	      	tags$script(sprintf('$(function() {
+	    	shiny::tags$p(label),
+	      	shiny::tags$input(id = inputId,value=paste0(selected,collapse=","),class="shinysky-select2Input",...),
+	      	shiny::tags$script(sprintf("$(function() { $('#%s').select2({width:'resolve',tags:[%s]})})",inputId,tags.choices)),
+	      	shiny::tags$script(sprintf('$(function() {
 				$("#%s").select2("container").find("ul.select2-choices").sortable({
     				containment: "parent",
     				start: function() { $("#%s").select2("onSortStart"); },
@@ -44,10 +52,10 @@ select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("
 					});})',inputId,inputId,inputId))
 	    	)
 	} else if (type == "select") {
-		tagList(
+		shiny::tagList(
 			includeSelect2(),
 			selectInput(inputId,label,choices,selected,...),
-	      	tags$script(sprintf("$(function() { $('#%s').select2({width:'resolve'})})",inputId))
+	      	shiny::tags$script(sprintf("$(function() { $('#%s').select2({width:'resolve'})})",inputId))
 	      	)
 	}
 }
@@ -58,15 +66,15 @@ select2Input <- function(inputId,label, choices = NULL,selected = NULL, type=c("
 #' the user can have access to select2 even if they only use it in the dynamic 
 #' UI
 #' 
-#' @param drag.and.drop Allow drag and drop of elements
-#' @return the HTML to include the Javascripot and CSS of select2.js
+#' @return `includeSelect2` returns the HTML to include the Javascripot and CSS of select2.js
+#' @rdname select2Input
 #' @export
 includeSelect2 <- function(drag.and.drop = FALSE) {
-  tagList(
-  	singleton(tags$head(tags$link(href="shinysky/select2/select2.css",rel="stylesheet",type="text/css")))
-    ,singleton(tags$head(tags$script(src="shinysky/select2/select2.js")))
-    ,singleton(tags$head(tags$script(src="shinysky/jquery-sortable/js/jquery-ui-1.10.3.custom.min.js")))
-    ,singleton(tags$head(tags$script(src="shinysky/select2Input.js")))
+  shiny::tagList(
+  	shiny::singleton(shiny::tags$head(shiny::tags$link(href="shinysky/select2/select2.css",rel="stylesheet",type="text/css")))
+    ,shiny::singleton(shiny::tags$head(shiny::tags$script(src="shinysky/select2/select2.js")))
+    ,shiny::singleton(shiny::tags$head(shiny::tags$script(src="shinysky/jquery-sortable/js/jquery-ui-1.10.3.custom.min.js")))
+    ,shiny::singleton(shiny::tags$head(shiny::tags$script(src="shinysky/select2Input.js")))
     )
 }
 
@@ -74,12 +82,8 @@ includeSelect2 <- function(drag.and.drop = FALSE) {
 #' 
 #' Update select2Input
 #' 
-#' @param session The session
-#' @param inputId The id of the component
-#' @param label The text label
-#' @param choices The possible choices
-#' @param selected The selected.
-#'   
+#' @param session The Shiny session
+#' @rdname select2Input
 #' @export
 updateSelect2Input <- function(session ,inputId,label,choices = NULL,selected = NULL) {
 	session$sendCustomMessage(type = "updateShinySkySelect2", list(id=inputId,choices =choices,selected =selected,label=label))

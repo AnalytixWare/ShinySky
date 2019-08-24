@@ -1,27 +1,38 @@
-ShinySky
-========
+# ShinySky
 
-Various UI widgets/components used by AnalytixWare's flaghship product e.g. alerts, styled buttons
+Various UI widgets/components used by AnalytixWare's flagship product e.g. alerts, styled buttons
 
 ![alt text](/screenshots/7.png?raw=true "Examples")
 
 
 # Install
-```s
-if (require(devtools)) install.packages("devtools")#if not alrady installed
+To install the CRAN version
+```r
+# when on CRAN
+install.package("shinysky")
+```
+
+to install the latest version
+```r
+if (require(devtools)) install.packages("devtools")#if not already installed
 devtools::install_github("AnalytixWare/ShinySky")
+```
+
+# Quick Start
+Simply the run the examples and take a look at the code included inside the example Shiny app
+```r
 library(shinysky)
 shinysky::run.shinysky.example()
 ```
 
 # Usage
 
-```s
-require(shinysky)
+```r
+library(shinysky)
 ```
 
 ## Action Buttons
-```s
+```r
 actionButton(inputId, label, styleclass = yourStyle)
 ```
 
@@ -30,17 +41,17 @@ Specify the style with the  styleclass argument. The possible styles are "primar
 ## Alerts
 
 ### ui.R
-```s
+```r
 shinyalert(id, click.hide = TRUE, auto.close.after = NULL)
 ```
 
-In the past clicking on the alert will hide it. Setting click.hide = FALSE can prevent this behaviour
-The auto.close.after can take a number and will close the alert after this many seconds.
+In the past clicking on the alert will hide it. Setting `click.hide = FALSE` can prevent this behaviour
+The `auto.close.after` can take a number and will close the alert after this many seconds.
 
-Simply provide an id. The alert will be hidden until you show it using _showshinyalert_ in server.R
+Simply provide an id. The alert will be hidden until you show it using `showshinyalert` in server.R
 
 ### server.R
-```s
+```r
 showshinyalert(session,id,HTMLtext,styleclass)
 ```
 
@@ -48,7 +59,7 @@ Put some valid HTML in HTMLtext. Here you can specify the style you want using t
 
 ## Select2
 The below will create a multiple select2 with "a", "b", "c" as choices
-```s
+```r
 select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b","c"),selected=c("b","a"))
 ```
 
@@ -58,7 +69,7 @@ select2Input("select2Input1","This is a multiple select2Input",choices=c("a","b"
 alt="Video Demo" width="240" height="180" border="10" /></a>
 
 ## Typeahead Text Input
-```s
+```r
 textInput.typeahead(
     id="thti"
     ,placeholder="type 'name' or '2'"
@@ -72,7 +83,7 @@ textInput.typeahead(
 ## Busy Indicator
 ### ui.R
 
-```s
+```r
 busyIndicator(wait = 1000)
 ```
 
@@ -80,29 +91,34 @@ Here the wait determines how long to wait before showing the buys indicator. The
 
 ## Events Buttons
 
-```s
+```r
 eventsButton(inputId, label, events = c("dblclick"))
 ```
 
-This button will invalidate (dirty) upon the events. The event does not have to be a "click", in fact the default is dblclick. You can specify multiple events. For a list of event types See: http://api.jquery.com/category/events/mouse-events/
+This button will invalidate (become dirty) upon the events. The event does not have to be a "click", in fact the default is dblclick. You can specify multiple events. For a list of event types See: http://api.jquery.com/category/events/mouse-events/
 
 # Handsontable Input/Output
 ### ui.R
 
-```s
+```r
 hotable("hotable1")
 ```
 
 This will create a handsontable which you can output using 
 
-```s
+```r
 output$hotable1 <- renderHotable({...})
 ```
 
 ### server.R
 
-```s
+```r
 something <- reactive({
 	hot.to.df(input$hotable1) # this will convert your input into a data.frame
 })
 ```
+
+# Do you need help with Shiny?
+[![Contact me on Codementor](https://cdn.codementor.io/badges/contact_me_github.svg)](https://www.codementor.io/evalparse)
+
+I am available for Shiny consulting! [Email me](mailto:dzj@analytixware.com) to get 10% discount off the hourly rate.
