@@ -98,7 +98,7 @@ renderHotable <- function(expr, env = parent.frame(), quoted = FALSE,
 
         readOnly <- rep(readOnly,length.out = l)
 
-        for (i in 1:l) {
+        for (i in seq_len(l)) {
             if (i == 1) {
                 columns[[i]] <- list(readOnly = readOnly[i])
             } else if (types[i] == "double") {
